@@ -1184,6 +1184,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 846098622}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: PlayOneShot
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: 6f9f20878745a9543bb435062ac87e8d, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _collisionExited:
     m_PersistentCalls:
       m_Calls: []
@@ -5966,6 +5978,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 8329837474257977448, guid: bca2fda87914b4cd8afe0831cd9f6fe5, type: 3}
   m_PrefabInstance: {fileID: 842705749}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &846098622 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 2243354373830068209, guid: fac5c459cf5c0774fba0309cb13f16c6, type: 3}
+  m_PrefabInstance: {fileID: 589327712}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &850121765
 PrefabInstance:
