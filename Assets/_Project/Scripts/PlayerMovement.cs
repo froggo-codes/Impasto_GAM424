@@ -7,10 +7,11 @@ public class PlayerMovement : MonoBehaviour
     [Header("Movement")] [SerializeField] private float moveSpeed = 6f;
 
     [Header("Jump")] [SerializeField] private float jumpHeight = 3f;
+    [SerializeField] private AudioClip jumpSound;
 
-    [Header("Ground Check")] [SerializeField]
-    private Transform groundCheck;
-
+    [Header("Ground Check")] 
+    
+    [SerializeField] private Transform groundCheck;
     [SerializeField] private float groundCheckRadius = 0.2f;
     [SerializeField] private LayerMask groundLayer;
 
@@ -28,10 +29,12 @@ public class PlayerMovement : MonoBehaviour
     private bool touchingWallLeft;
     private bool touchingWallRight;
     private float wallJumpLockTimer;
+    private AudioSource audioSource;
 
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -66,12 +69,14 @@ public class PlayerMovement : MonoBehaviour
             if (isGrounded)
             {
                 rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpVelocity);
+                audioSource.PlayOneShot(jumpSound);
             }
             else if (touchingWallLeft || touchingWallRight)
             {
                 float pushDirection = touchingWallLeft ? 1f : -1f;
                 rb.linearVelocity = new Vector2(pushDirection * wallJumpPushSpeed, jumpVelocity);
                 wallJumpLockTimer = wallJumpLockTime;
+                audioSource.PlayOneShot(jumpSound);
             }
         }
 
