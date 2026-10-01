@@ -906,6 +906,7 @@ GameObject:
   - component: {fileID: 151559301}
   - component: {fileID: 151559300}
   - component: {fileID: 151559303}
+  - component: {fileID: 151559304}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -956,7 +957,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 25
+  orthographic size: 12.5
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1031,6 +1032,21 @@ MonoBehaviour:
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
   m_Version: 2
+--- !u!114 &151559304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 151559299}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2d9ba9b8d955ba4ab379d6440aac205, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CameraFollow
+  target: {fileID: 1240718968}
+  smoothTime: 0.15
+  offset: {x: 0, y: 1}
 --- !u!1001 &153549416
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9009,6 +9025,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 2665692224333501945, guid: f6423e483341a43b0ac3bdd478ca3801, type: 3}
   m_PrefabInstance: {fileID: 1240501115}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1240718968 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 9117972571005609477, guid: fac5c459cf5c0774fba0309cb13f16c6, type: 3}
+  m_PrefabInstance: {fileID: 589327712}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1245208812
 PrefabInstance:
