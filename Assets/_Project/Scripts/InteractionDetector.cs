@@ -7,19 +7,11 @@ public class InteractionDetector : MonoBehaviour
     
     void Update()
     {
-        if (Keyboard.current.eKey.isPressed && interactableInRange != null && interactableInRange.CanInteract())
+        if (Keyboard.current.eKey.wasPressedThisFrame)
         {
-            interactableInRange.Interact();
+            interactableInRange?.Interact();
         }
     }
-
-   //public void OnInteract(InputAction.CallbackContext context)
-    //{
-        //if (context.performed)
-        //{
-            //interactableInRange?.Interact();
-        //}
-    //}
     
     private void OnTriggerEnter2D(Collider2D collision)
     {
