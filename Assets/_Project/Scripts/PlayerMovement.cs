@@ -5,24 +5,31 @@ using UnityEngine.InputSystem;
 public class PlayerMovement : MonoBehaviour
 {
     [Header("Movement")] [SerializeField] private float moveSpeed = 6f;
-
     [Header("Jump")] [SerializeField] private float jumpHeight = 3f;
     [SerializeField] private AudioClip jumpSound;
 
-    [Header("Ground Check")] 
-    
-    [SerializeField] private Transform groundCheck;
+    [Header("Ground Check")] [SerializeField]
+    private Transform groundCheck;
+
     [SerializeField] private float groundCheckRadius = 0.2f;
     [SerializeField] private LayerMask groundLayer;
 
-    [Header("Wall Jump")]
-    [SerializeField] private Transform wallCheckLeft;
+    [Header("Wall Jump")] [SerializeField] private Transform wallCheckLeft;
     [SerializeField] private Transform wallCheckRight;
     [SerializeField] private float wallCheckRadius = 0.2f;
     [SerializeField] private float wallJumpPushSpeed = 8f;
     [SerializeField] private float wallJumpLockTime = 0.2f;
 
-    private Rigidbody2D rb;
+    [Header("Dash")] [SerializeField] private float dashSpeed = 18f;
+    [SerializeField] private float dashDuration = 0.15f;
+    [SerializeField] private float dashCooldown = 0.4f;
+    [SerializeField] private AudioClip dashSound;
+
+    [Header("Climbing")] 
+    [SerializeField] private float climbSpeed = 4f;
+    [SerializeField] private float regrabDelay = 0.25f;
+
+private Rigidbody2D rb;
     private float moveInput;
     private bool jumpPressed;
     private bool isGrounded;
@@ -31,10 +38,24 @@ public class PlayerMovement : MonoBehaviour
     private float wallJumpLockTimer;
     private AudioSource audioSource;
 
+    private float facingDirection = 1f;
+    private bool dashPressed;
+    private bool isDashing;
+    private float dashTimer;
+    private float dashCooldownTimer;
+    private bool canAirDash = true;
+    private float normalGravityScale;
+
+    private float climbInput;
+    private bool isClimbing;
+    private Rope currentRope;
+    private float regrabTimer;
+
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         audioSource = GetComponent<AudioSource>();
+        normalGravityScale = rb.gravityScale;
     }
 
     void Update()
@@ -47,8 +68,22 @@ public class PlayerMovement : MonoBehaviour
         if (Keyboard.current.dKey.isPressed || Keyboard.current.rightArrowKey.isPressed)
             moveInput += 1f;
 
+        if (moveInput != 0f)
+            facingDirection = moveInput;
+
+        climbInput = 0f;
+
+        if (Keyboard.current.wKey.isPressed || Keyboard.current.upArrowKey.isPressed)
+            climbInput += 1f;
+
+        if (Keyboard.current.sKey.isPressed || Keyboard.current.downArrowKey.isPressed)
+            climbInput -= 1f;
+
         if (Keyboard.current.spaceKey.wasPressedThisFrame)
             jumpPressed = true;
+
+        if (Keyboard.current.leftShiftKey.wasPressedThisFrame)
+            dashPressed = true;
     }
 
     void FixedUpdate()
@@ -57,6 +92,62 @@ public class PlayerMovement : MonoBehaviour
         touchingWallLeft = Physics2D.OverlapCircle(wallCheckLeft.position, wallCheckRadius, groundLayer) != null;
         touchingWallRight = Physics2D.OverlapCircle(wallCheckRight.position, wallCheckRadius, groundLayer) != null;
 
+        if (isGrounded)
+            canAirDash = true;
+
+        if (dashCooldownTimer > 0f)
+            dashCooldownTimer -= Time.fixedDeltaTime;
+
+        if (regrabTimer > 0f)
+            regrabTimer -= Time.fixedDeltaTime;
+
+        if (!isClimbing && !isDashing && currentRope != null && climbInput > 0f && regrabTimer <= 0f)
+            StartClimb();
+
+        if (isClimbing)
+        {
+            if (currentRope == null || (isGrounded && climbInput < 0f))
+            {
+                StopClimb();
+            }
+            else
+            {
+                if (jumpPressed)
+                {
+                    StopClimb();
+                    rb.linearVelocity = new Vector2(moveInput * moveSpeed, GetJumpVelocity());
+                    regrabTimer = regrabDelay;
+                    audioSource.PlayOneShot(jumpSound);
+                }
+                else
+                {
+                    rb.position = new Vector2(currentRope.transform.position.x, rb.position.y);
+                    rb.linearVelocity = new Vector2(0f, climbInput * climbSpeed);
+                }
+
+                jumpPressed = false;
+                dashPressed = false;
+                return;
+            }
+        }
+
+        if (dashPressed && !isDashing && dashCooldownTimer <= 0f && (isGrounded || canAirDash))
+            StartDash();
+
+        dashPressed = false;
+
+        if (isDashing)
+        {
+            rb.linearVelocity = new Vector2(facingDirection * dashSpeed, 0f);
+            dashTimer -= Time.fixedDeltaTime;
+
+            if (dashTimer <= 0f)
+                EndDash();
+
+            jumpPressed = false;
+            return;
+        }
+
         if (wallJumpLockTimer > 0f)
             wallJumpLockTimer -= Time.fixedDeltaTime;
         else
@@ -64,7 +155,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (jumpPressed)
         {
-            float jumpVelocity = Mathf.Sqrt(2f * Physics2D.gravity.magnitude * rb.gravityScale * jumpHeight);
+            float jumpVelocity = GetJumpVelocity();
 
             if (isGrounded)
             {
@@ -81,6 +172,61 @@ public class PlayerMovement : MonoBehaviour
         }
 
         jumpPressed = false;
+    }
+
+    float GetJumpVelocity()
+    {
+        return Mathf.Sqrt(2f * Physics2D.gravity.magnitude * rb.gravityScale * jumpHeight);
+    }
+
+    void StartDash()
+    {
+        isDashing = true;
+        dashTimer = dashDuration;
+        dashCooldownTimer = dashCooldown;
+        wallJumpLockTimer = 0f;
+
+        if (!isGrounded)
+            canAirDash = false;
+
+        rb.gravityScale = 0f;
+
+        if (dashSound != null)
+            audioSource.PlayOneShot(dashSound);
+    }
+
+    void EndDash()
+    {
+        isDashing = false;
+        rb.gravityScale = normalGravityScale;
+    }
+
+    void StartClimb()
+    {
+        isClimbing = true;
+        wallJumpLockTimer = 0f;
+        rb.gravityScale = 0f;
+        rb.linearVelocity = Vector2.zero;
+    }
+
+    void StopClimb()
+    {
+        isClimbing = false;
+        rb.gravityScale = normalGravityScale;
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        Rope rope = other.GetComponent<Rope>();
+        if (rope != null)
+            currentRope = rope;
+    }
+
+    void OnTriggerExit2D(Collider2D other)
+    {
+        Rope rope = other.GetComponent<Rope>();
+        if (rope != null && rope == currentRope)
+            currentRope = null;
     }
 
     void OnDrawGizmosSelected()
