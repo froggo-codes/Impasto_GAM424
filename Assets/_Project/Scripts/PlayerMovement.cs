@@ -9,18 +9,23 @@ public class PlayerMovement : MonoBehaviour
     [Header("Jump")] [SerializeField] private float jumpHeight = 3f;
     [SerializeField] private AudioClip jumpSound;
 
-    [Header("Ground Check")] 
-    
-    [SerializeField] private Transform groundCheck;
+    [Header("Ground Check")] [SerializeField]
+    private Transform groundCheck;
+
     [SerializeField] private float groundCheckRadius = 0.2f;
     [SerializeField] private LayerMask groundLayer;
 
-    [Header("Wall Jump")]
-    [SerializeField] private Transform wallCheckLeft;
+    [Header("Wall Jump")] [SerializeField] private Transform wallCheckLeft;
     [SerializeField] private Transform wallCheckRight;
     [SerializeField] private float wallCheckRadius = 0.2f;
     [SerializeField] private float wallJumpPushSpeed = 8f;
     [SerializeField] private float wallJumpLockTime = 0.2f;
+
+    [Header("Dash")] 
+    [SerializeField] private float dashSpeed = 18f;
+    [SerializeField] private float dashDuration = 0.15f;
+    [SerializeField] private float dashCooldown = 0.4f;
+    [SerializeField] private AudioClip dashSound;
 
     private Rigidbody2D rb;
     private float moveInput;
@@ -31,10 +36,19 @@ public class PlayerMovement : MonoBehaviour
     private float wallJumpLockTimer;
     private AudioSource audioSource;
 
+    private float facingDirection = 1f;
+    private bool dashPressed;
+    private bool isDashing;
+    private float dashTimer;
+    private float dashCooldownTimer;
+    private bool canAirDash = true;
+    private float normalGravityScale;
+
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         audioSource = GetComponent<AudioSource>();
+        normalGravityScale = rb.gravityScale;
     }
 
     void Update()
@@ -47,8 +61,14 @@ public class PlayerMovement : MonoBehaviour
         if (Keyboard.current.dKey.isPressed || Keyboard.current.rightArrowKey.isPressed)
             moveInput += 1f;
 
+        if (moveInput != 0f)
+            facingDirection = moveInput;
+
         if (Keyboard.current.spaceKey.wasPressedThisFrame)
             jumpPressed = true;
+
+        if (Keyboard.current.leftShiftKey.wasPressedThisFrame)
+            dashPressed = true;
     }
 
     void FixedUpdate()
@@ -56,6 +76,29 @@ public class PlayerMovement : MonoBehaviour
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer) != null;
         touchingWallLeft = Physics2D.OverlapCircle(wallCheckLeft.position, wallCheckRadius, groundLayer) != null;
         touchingWallRight = Physics2D.OverlapCircle(wallCheckRight.position, wallCheckRadius, groundLayer) != null;
+
+        if (isGrounded)
+            canAirDash = true;
+
+        if (dashCooldownTimer > 0f)
+            dashCooldownTimer -= Time.fixedDeltaTime;
+
+        if (dashPressed && !isDashing && dashCooldownTimer <= 0f && (isGrounded || canAirDash))
+            StartDash();
+
+        dashPressed = false;
+
+        if (isDashing)
+        {
+            rb.linearVelocity = new Vector2(facingDirection * dashSpeed, 0f);
+            dashTimer -= Time.fixedDeltaTime;
+
+            if (dashTimer <= 0f)
+                EndDash();
+
+            jumpPressed = false;
+            return;
+        }
 
         if (wallJumpLockTimer > 0f)
             wallJumpLockTimer -= Time.fixedDeltaTime;
@@ -81,6 +124,28 @@ public class PlayerMovement : MonoBehaviour
         }
 
         jumpPressed = false;
+    }
+
+    void StartDash()
+    {
+        isDashing = true;
+        dashTimer = dashDuration;
+        dashCooldownTimer = dashCooldown;
+        wallJumpLockTimer = 0f;
+
+        if (!isGrounded)
+            canAirDash = false;
+
+        rb.gravityScale = 0f;
+
+        if (dashSound != null)
+            audioSource.PlayOneShot(dashSound);
+    }
+
+    void EndDash()
+    {
+        isDashing = false;
+        rb.gravityScale = normalGravityScale;
     }
 
     void OnDrawGizmosSelected()

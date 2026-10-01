@@ -4078,6 +4078,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 2829881172635409779, guid: fac5c459cf5c0774fba0309cb13f16c6, type: 3}
+      propertyPath: dashSound
+      value: 
+      objectReference: {fileID: 8300000, guid: b3e97e0fb0425a44da2b2fd49aefece2, type: 3}
+    - target: {fileID: 2829881172635409779, guid: fac5c459cf5c0774fba0309cb13f16c6, type: 3}
+      propertyPath: dashSpeed
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 2829881172635409779, guid: fac5c459cf5c0774fba0309cb13f16c6, type: 3}
+      propertyPath: dashDuration
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 9117972571005609477, guid: fac5c459cf5c0774fba0309cb13f16c6, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
