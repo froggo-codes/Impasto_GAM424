@@ -1,15 +1,31 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
+using UnityEngine.InputSystem; 
 
 public class InteractionDetector : MonoBehaviour
 {
-    private IInteractable InteractableInRange = null; //Closest interactable
+    private IInteractable interactableInRange = null; //Closest interactable
     
-    public void OnInteract(InputAction.CallbackContext context)
+    void Update()
     {
-        if (context.performed)
+        if (Keyboard.current.eKey.isPressed )
         {
-            InteractableInRange?.Interact();
+            interactableInRange?.Interact();
+        }
+    }
+    
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.TryGetComponent(out IInteractable interactable) && interactable.CanInteract())
+        {
+            interactableInRange = interactable;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if(collision.TryGetComponent(out IInteractable interactable) && interactable == interactableInRange)
+        {
+            interactableInRange = null;
         }
     }
 }

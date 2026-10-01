@@ -6,7 +6,7 @@ public class NPC : MonoBehaviour, IInteractable
 {
     public NPCDialogue dialogueData;
     public GameObject dialoguePanel;
-    public TMP_Text dialogueText;
+    public TMP_Text dialogueText; //nameText;
     //public Image portraitImage;
 
     private int dialogueIndex;
@@ -19,7 +19,7 @@ public class NPC : MonoBehaviour, IInteractable
 
     public void Interact()
     {
-        if (dialogueData == null)
+        if (dialogueData == null) // If we add a pause menu also include: || (PauseController.IsGamePaused && !isDialogueAtive)
             return;
 
         if (isDialogueActive)
@@ -41,7 +41,7 @@ public class NPC : MonoBehaviour, IInteractable
         //portraitImage.sprite = dialogueData.npcPortrait;
 
         dialoguePanel.SetActive(true);
-        //PauseController.SetPause(true);
+        //PauseController.SetPause(true); If we add a pause menu
 
         StartCoroutine(TypeLine());
 
