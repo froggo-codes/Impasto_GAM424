@@ -29,13 +29,17 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float climbSpeed = 4f;
     [SerializeField] private float regrabDelay = 0.25f;
 
+    [Header("Damage")]
+    [SerializeField] private Vector2 knockbackVelocity = new Vector2(6f, 8f);
+    [SerializeField] private float knockbackLockTime = 0.3f;
+
 private Rigidbody2D rb;
     private float moveInput;
     private bool jumpPressed;
     private bool isGrounded;
     private bool touchingWallLeft;
     private bool touchingWallRight;
-    private float wallJumpLockTimer;
+    private float inputLockTimer;
     private AudioSource audioSource;
 
     private float facingDirection = 1f;
@@ -159,8 +163,8 @@ private Rigidbody2D rb;
             return;
         }
 
-        if (wallJumpLockTimer > 0f)
-            wallJumpLockTimer -= Time.fixedDeltaTime;
+        if (inputLockTimer > 0f)
+            inputLockTimer -= Time.fixedDeltaTime;
         else
             rb.linearVelocity = new Vector2(moveInput * moveSpeed, rb.linearVelocity.y);
 
@@ -177,7 +181,7 @@ private Rigidbody2D rb;
             {
                 float pushDirection = touchingWallLeft ? 1f : -1f;
                 rb.linearVelocity = new Vector2(pushDirection * wallJumpPushSpeed, jumpVelocity);
-                wallJumpLockTimer = wallJumpLockTime;
+                inputLockTimer = wallJumpLockTime;
                 audioSource.PlayOneShot(jumpSound);
             }
         }
@@ -195,7 +199,7 @@ private Rigidbody2D rb;
         isDashing = true;
         dashTimer = dashDuration;
         dashCooldownTimer = dashCooldown;
-        wallJumpLockTimer = 0f;
+        inputLockTimer = 0f;
 
         if (!isGrounded)
             canAirDash = false;
@@ -224,7 +228,7 @@ private Rigidbody2D rb;
     void StartClimb()
     {
         isClimbing = true;
-        wallJumpLockTimer = 0f;
+        inputLockTimer = 0f;
         rb.gravityScale = 0f;
         rb.linearVelocity = Vector2.zero;
     }
@@ -247,6 +251,16 @@ private Rigidbody2D rb;
         Rope rope = other.GetComponent<Rope>();
         if (rope != null && rope == currentRope)
             currentRope = null;
+    }
+
+    public void Knockback(Vector2 sourcePosition)
+    {
+        if (isDashing) EndDash();
+        if (isClimbing) StopClimb();
+
+        float direction = transform.position.x < sourcePosition.x ? -1f : 1f;
+        rb.linearVelocity = new Vector2(direction * knockbackVelocity.x, knockbackVelocity.y);
+        inputLockTimer = knockbackLockTime;
     }
 
     void OnDrawGizmosSelected()
