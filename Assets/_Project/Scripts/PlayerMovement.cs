@@ -10,9 +10,9 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Ground Check")] [SerializeField]
     private Transform groundCheck;
-
     [SerializeField] private float groundCheckRadius = 0.2f;
     [SerializeField] private LayerMask groundLayer;
+    [SerializeField] private float safeGroundMargin = 0.6f;
 
     [Header("Wall Jump")] [SerializeField] private Transform wallCheckLeft;
     [SerializeField] private Transform wallCheckRight;
@@ -50,10 +50,12 @@ private Rigidbody2D rb;
     private bool isClimbing;
     private Rope currentRope;
     private float regrabTimer;
+    private Vector2 lastSafePosition;
 
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        lastSafePosition = rb.position;
         audioSource = GetComponent<AudioSource>();
         normalGravityScale = rb.gravityScale;
     }
@@ -93,7 +95,16 @@ private Rigidbody2D rb;
         touchingWallRight = Physics2D.OverlapCircle(wallCheckRight.position, wallCheckRadius, groundLayer) != null;
 
         if (isGrounded)
+        {
             canAirDash = true;
+
+            Vector2 checkPos = groundCheck.position;
+            bool groundLeft = Physics2D.OverlapCircle(checkPos + Vector2.left * safeGroundMargin, groundCheckRadius, groundLayer) !=null;
+            bool groundRight = Physics2D.OverlapCircle(checkPos + Vector2.right * safeGroundMargin, groundCheckRadius, groundLayer) != null;
+
+            if (groundLeft && groundRight)
+                lastSafePosition = rb.position;
+        }
 
         if (dashCooldownTimer > 0f)
             dashCooldownTimer -= Time.fixedDeltaTime;
@@ -201,6 +212,15 @@ private Rigidbody2D rb;
         rb.gravityScale = normalGravityScale;
     }
 
+    public void Respawn()
+    {
+        if (isDashing) EndDash();
+        if (isClimbing) StopClimb();
+
+        rb.linearVelocity = Vector2.zero;
+        transform.position = lastSafePosition + Vector2.up * 0.5f;
+    }
+    
     void StartClimb()
     {
         isClimbing = true;
