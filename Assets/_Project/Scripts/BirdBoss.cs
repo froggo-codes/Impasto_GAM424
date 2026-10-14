@@ -1,6 +1,7 @@
 using Unity.VectorGraphics;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
 
 // Bird boss for the piano level. A state machine: the bird is always in exactly one state.
 // Behaviour Loop: Circling -> FlyingToStart -> Telegraphing -> Swooping -> Nested -> Returning -> Circling.
@@ -15,7 +16,8 @@ public class BirdBoss : MonoBehaviour
         Swooping,       // diving through the player's position into the nest
         Nested,     // sitting in the nest (the stomp window)
         Stunned,    // dazed after a stomp
-        Returning   // flying back up to the oval
+        Returning,   // flying back up to the oval
+        Calmed      // fight over: resting peacefully in the nest
     }
 
     // One authored dive. Fill these in on the Inspector's Attacks list.
@@ -54,6 +56,13 @@ public class BirdBoss : MonoBehaviour
     [SerializeField] private float stompBounce = 12f;   // upward speed given to the player on a stomp
     [SerializeField] private float stompHeightMargin = 0.5f;    // how far above the bird's center counts as "on top"
     [SerializeField] private Color stunColor = Color.cyan;
+
+    [Header("Phases")] 
+    [SerializeField] private float speedUpPerHit = 0.15f;    // each stomp makes timing 15% shorter
+    [SerializeField] private Color calmColor = Color.green;
+    [SerializeField] private UnityEvent onCalmed;       // HOOK: fires once when the bird is calmed
+
+    private int hitsTaken; // stomps landed so far
 
     private Health health;
     private DamageOnTouch damageOnTouch;
@@ -96,8 +105,9 @@ public class BirdBoss : MonoBehaviour
     {
         //Do nothing until the player enters the arena
         if (!fightStarted) return;
-        // Only dangerous while flying; safe to touch while resting or stunned
-        damageOnTouch.enabled = state != BirdState.Nested && state != BirdState.Stunned;
+        // Only dangerous while flying; safe to touch while resting, stunned, or calmed
+        bool isResting = state == BirdState.Nested || state == BirdState.Stunned || state == BirdState.Calmed;
+        damageOnTouch.enabled = !isResting;
 
         switch (state)
         {
@@ -108,6 +118,7 @@ public class BirdBoss : MonoBehaviour
             case BirdState.Nested: UpdateNested(); break;
             case BirdState.Stunned: UpdateStunned(); break;
             case BirdState.Returning: UpdateReturning(); break;
+            case BirdState.Calmed: break;   // does nothing; the fight is over
         }
     }
     
@@ -140,7 +151,7 @@ public class BirdBoss : MonoBehaviour
         {
             spriteRenderer.color = telegraphColor;
             ShowNestHint(true);
-            stateTimer = telegraphTime;
+            stateTimer = telegraphTime * GetPace();
             state = BirdState.Telegraphing;
         }
     }
@@ -171,12 +182,12 @@ public class BirdBoss : MonoBehaviour
     void UpdateSwooping()
     {
         swoopTimer += Time.fixedDeltaTime;
-        float t = Mathf.Clamp01(swoopTimer / currentAttack.swoopDuration);  // 0 = start, 1 = nest
+        float t = Mathf.Clamp01(swoopTimer / (currentAttack.swoopDuration * GetPace()));  // 0 = start, 1 = nest
         rb.MovePosition(Bezier(swoopStart, swoopControl, swoopEnd, t));
 
         if (t >= 1f)
         {
-            stateTimer = nestTime;
+            stateTimer = nestTime * GetPace();
             state = BirdState.Nested;
         }
     }
@@ -207,7 +218,7 @@ public class BirdBoss : MonoBehaviour
     {
         if (FlyTowards(GetCirclePoint()))
         {
-            stateTimer = circleTime;
+            stateTimer = circleTime * GetPace();
             state = BirdState.Circling;
         }
     }
@@ -225,6 +236,17 @@ public class BirdBoss : MonoBehaviour
     public void StartFight()
     {
         fightStarted = true;
+    }
+    
+    // Called by Health's On Died after the final stomp. Ends the fight peacefully.
+    public void Calm()
+    {
+        if (state == BirdState.Calmed) return;  // only once
+
+        state = BirdState.Calmed;
+        spriteRenderer.color = calmColor;
+        ShowNestHint(false);
+        onCalmed.Invoke();  // HOOK: The level reacts (sheet music, exit, song modde...)
     }
     
     // Moves one step toward target. Returns true once it has arrived.
@@ -267,12 +289,24 @@ public class BirdBoss : MonoBehaviour
 
         playerMovement.Bounce(stompBounce);
         
-        // Only stun if the hit actually landed (Health returns true/false)
-        if (health.TakeDamage(1))
-        {
-            spriteRenderer.color = stunColor;
-            stateTimer = stunTime;
-            state = BirdState.Stunned;
-        }
+        // Only continue if the hit actually landed (Health returns true/false)
+        bool hitLanded = health.TakeDamage(1);
+        if (!hitLanded) return;
+
+        hitsTaken++;
+        
+        //The final stomp calms the bird (Health's On Died -> Calm), so don't stun over it
+        if (state == BirdState.Calmed) return;
+
+        spriteRenderer.color = stunColor;
+        stateTimer = stunTime;
+        state = BirdState.Stunned;
+
+    }
+    
+    // Timing multiplier: 1.0 at full health, shorter after each stomp (1.0 -> 0.85 -> 0.7)
+    float GetPace()
+    {
+        return 1f - hitsTaken * speedUpPerHit;
     }
 }
