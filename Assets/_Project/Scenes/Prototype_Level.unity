@@ -12210,6 +12210,8 @@ GameObject:
   - component: {fileID: 1494843980}
   - component: {fileID: 1494843979}
   - component: {fileID: 1494843978}
+  - component: {fileID: 1494843984}
+  - component: {fileID: 1494843983}
   m_Layer: 0
   m_Name: BirdBoss
   m_TagString: Untagged
@@ -12248,6 +12250,10 @@ MonoBehaviour:
   telegraphColor: {r: 1, g: 0, b: 0, a: 1}
   showNestHint: 1
   nestHintColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  stunTime: 2
+  stompBounce: 12
+  stompHeightMargin: 0.5
+  stunColor: {r: 0, g: 1, b: 1, a: 1}
 --- !u!58 &1494843979
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -12386,6 +12392,39 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1494843983
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1494843977}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9466df47aa92104f81acfe9b083ed58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DamageOnTouch
+  damage: 1
+--- !u!114 &1494843984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1494843977}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb8ad28c2268da341b7fac281ee547ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Health
+  maxHealth: 3
+  invincibilityTime: 0.5
+  onDamaged:
+    m_PersistentCalls:
+      m_Calls: []
+  onDied:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &1506935196
 PrefabInstance:
   m_ObjectHideFlags: 0
