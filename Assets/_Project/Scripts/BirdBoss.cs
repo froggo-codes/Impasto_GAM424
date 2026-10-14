@@ -13,8 +13,9 @@ public class BirdBoss : MonoBehaviour
         FlyingToStart,      //heading to where the next dive begins
         Telegraphing,       //flashing red to warn the player; target nest lights up
         Swooping,       // diving through the player's position into the nest
-        Nested,     // flying back up to the oval
-        Returning
+        Nested,     // sitting in the nest (the stomp window)
+        Stunned,    // dazed after a stomp
+        Returning   // flying back up to the oval
     }
 
     // One authored dive. Fill these in on the Inspector's Attacks list.
@@ -48,6 +49,15 @@ public class BirdBoss : MonoBehaviour
     [SerializeField] private bool showNestHint = true;      // light up the target nest? (difficulty lever)
     [SerializeField] private Color nestHintColor = Color.yellow;
 
+    [Header("Combat")] 
+    [SerializeField] private float stunTime = 2f;    // how long it says dazed after a stomp
+    [SerializeField] private float stompBounce = 12f;   // upward speed given to the player on a stomp
+    [SerializeField] private float stompHeightMargin = 0.5f;    // how far above the bird's center counts as "on top"
+    [SerializeField] private Color stunColor = Color.cyan;
+
+    private Health health;
+    private DamageOnTouch damageOnTouch;
+
     // Components
     private Rigidbody2D rb;
     private SpriteRenderer spriteRenderer;
@@ -77,6 +87,8 @@ public class BirdBoss : MonoBehaviour
         normalColor = spriteRenderer.color;
         circleCenter = rb.position;
         fightStarted = startFightOnAwake;
+        health = GetComponent<Health>();
+        damageOnTouch = GetComponent<DamageOnTouch>();
     }
     
     // Runs only the current state's behaviour. Each method below is one state.
@@ -84,6 +96,8 @@ public class BirdBoss : MonoBehaviour
     {
         //Do nothing until the player enters the arena
         if (!fightStarted) return;
+        // Only dangerous while flying; safe to touch while resting or stunned
+        damageOnTouch.enabled = state != BirdState.Nested && state != BirdState.Stunned;
 
         switch (state)
         {
@@ -92,6 +106,7 @@ public class BirdBoss : MonoBehaviour
             case BirdState.Telegraphing: UpdateTelegraphing(); break;
             case BirdState.Swooping: UpdateSwooping(); break;
             case BirdState.Nested: UpdateNested(); break;
+            case BirdState.Stunned: UpdateStunned(); break;
             case BirdState.Returning: UpdateReturning(); break;
         }
     }
@@ -176,6 +191,17 @@ public class BirdBoss : MonoBehaviour
         state = BirdState.Returning;
     }
     
+    // STUNNED: dazed in the nest after a stomp, then recovers and flies off
+    void UpdateStunned()
+    {
+        stateTimer -= Time.fixedDeltaTime;
+        if (stateTimer > 0f) return;
+
+        spriteRenderer.color = normalColor;
+        ShowNestHint(false);
+        state = BirdState.Returning;
+    }
+    
     // RETURNING: fly back to the oval, then start drifting again
     void UpdateReturning()
     {
@@ -224,6 +250,29 @@ public class BirdBoss : MonoBehaviour
         else if (nestRenderer != null)
         {
             nestRenderer.color = nestNormalColor;
+        }
+    }
+    
+    // STOMP CHECK: landing on the bird while it rests in the nest stuns it
+    void OnCollisionStay2D(Collision2D collision)
+    {
+        if (state != BirdState.Nested) return;
+
+        PlayerMovement playerMovement = collision.gameObject.GetComponent<PlayerMovement>();
+        if (playerMovement == null) return;
+        
+        // Must be on top of the bird, not touching it from the side
+        bool playerIsAbove = collision.transform.position.y > transform.position.y + stompHeightMargin;
+        if (!playerIsAbove) return;
+
+        playerMovement.Bounce(stompBounce);
+        
+        // Only stun if the hit actually landed (Health returns true/false)
+        if (health.TakeDamage(1))
+        {
+            spriteRenderer.color = stunColor;
+            stateTimer = stunTime;
+            state = BirdState.Stunned;
         }
     }
 }

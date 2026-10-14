@@ -262,6 +262,12 @@ private Rigidbody2D rb;
         rb.linearVelocity = new Vector2(direction * knockbackVelocity.x, knockbackVelocity.y);
         inputLockTimer = knockbackLockTime;
     }
+    
+    public void Bounce(float bounceVelocity)
+    {
+        rb.linearVelocity = new Vector2(rb.linearVelocity.x, bounceVelocity);
+        canAirDash = true;
+    }
 
     void OnDrawGizmosSelected()
     {
