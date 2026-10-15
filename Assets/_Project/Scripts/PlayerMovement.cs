@@ -29,6 +29,9 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float climbSpeed = 4f;
     [SerializeField] private float regrabDelay = 0.25f;
 
+    [Header("Piano")]
+    [SerializeField] private GameObject pianoUI;
+
 private Rigidbody2D rb;
     private float moveInput;
     private bool jumpPressed;
@@ -84,6 +87,11 @@ private Rigidbody2D rb;
 
         if (Keyboard.current.leftShiftKey.wasPressedThisFrame)
             dashPressed = true;
+        
+        if (Keyboard.current.qKey.wasPressedThisFrame)
+        {
+            PlayPiano();
+        }
     }
 
     void FixedUpdate()
@@ -240,5 +248,18 @@ private Rigidbody2D rb;
             Gizmos.DrawWireSphere(wallCheckLeft.position, wallCheckRadius);
         if (wallCheckRight != null)
             Gizmos.DrawWireSphere(wallCheckRight.position, wallCheckRadius);
+    }
+
+    public void PlayPiano()
+    {
+        if (!pianoUI.activeInHierarchy)
+        {
+            pianoUI.SetActive(true);
+
+        }
+        else
+        {
+            pianoUI.SetActive(false);
+        }
     }
 }
