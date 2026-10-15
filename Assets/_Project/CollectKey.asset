@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a930c9b6ce604957a8f8fc157b194f6, type: 3}
   m_Name: CollectKey
   m_EditorClassIdentifier: Assembly-CSharp::Quest
-  questID: ffcdee25-edc9-4350-84de-85d3f4fd7046
-  questName: CollectKey
+  questID: C2ba474ff-ec51-4162-b03c-ed49f9d90fb6
+  questName: Collect Keys
   objectives:
   - objectiveID: 1
     type: 0

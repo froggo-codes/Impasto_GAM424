@@ -4,21 +4,21 @@ using UnityEngine;
 
 public class QuestUI : MonoBehaviour
 {
-    public RectTransform questListContent;
+    public Transform questListContent;
     public GameObject questEntryPrefab;
     public GameObject objectiveTextPrefab;
 
-    public Quest testQuest; // Assign this in the inspector for testing
-    public int testQuestAmount;
+    public Quest currentQuest; // Assign this in the inspector for testing
+    public int currentQuestAmount;
 
-    private List<QuestProgress> testQuests = new();
+    private List<QuestProgress> currentQuests = new();
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        for(int i = 0; i < testQuestAmount; i++)
+        for(int i = 0; i < currentQuestAmount; i++)
         {
-            testQuests.Add(new QuestProgress(testQuest));
+            currentQuests.Add(new QuestProgress(currentQuest));
         }
 
         UpdateQuestUI();
@@ -33,7 +33,7 @@ public class QuestUI : MonoBehaviour
         }
 
         //Build quest entries
-        foreach(var quest in testQuests)
+        foreach(var quest in currentQuests)
         {
             GameObject entry = Instantiate(questEntryPrefab, questListContent);
             Transform objectiveList = entry.transform.Find("ObjectiveList");
