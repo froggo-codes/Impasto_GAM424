@@ -6,6 +6,9 @@ public class DamageOnTouch : MonoBehaviour
 
     void OnCollisionStay2D(Collision2D collision)
     {
+        // Unity still sends collision events to DISABLED scripts, so check manually
+        if (!enabled) return;
+        
         Health health = collision.gameObject.GetComponent<Health>();
         if (health == null) return;
 
