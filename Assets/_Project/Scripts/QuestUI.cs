@@ -11,7 +11,7 @@ public class QuestUI : MonoBehaviour
     public Quest currentQuest; // Assign this in the inspector for testing
     public int currentQuestAmount;
 
-    private List<QuestProgress> currentQuests = new();
+    public List<QuestProgress> currentQuests = new();
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -43,6 +43,25 @@ public class QuestUI : MonoBehaviour
                 GameObject objTextGO = Instantiate(objectiveTextPrefab, objectiveList);
                 TMP_Text objText = objTextGO.GetComponent<TMP_Text>();
                 objText.text = $"{objective.currentAmount}/{objective.requiredAmount}";
+            }
+        }
+    
+    }
+
+    public void Update()
+    {
+        for (int i = 0; i < currentQuests.Count; i++)
+        {
+            var questUI = questListContent.GetChild(i);
+            var questProgress = currentQuests[i];
+
+            for (int j = 0; j < questProgress.objectives.Count; j++)
+            {
+                var objectiveUI = questUI.Find("ObjectiveList").GetChild(j);
+                var objectiveProgress = questProgress.objectives[j];
+
+                TMP_Text objText = objectiveUI.GetComponent<TMP_Text>();
+                objText.text = $"{objectiveProgress.currentAmount}/{objectiveProgress.requiredAmount}";
             }
         }
     }

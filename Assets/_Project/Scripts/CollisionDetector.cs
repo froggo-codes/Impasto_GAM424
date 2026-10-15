@@ -12,14 +12,15 @@ public class CollisionDetector : MonoBehaviour
 
     [SerializeField]
     private UnityEvent _collisionExited; 
-    private QuestProgress _questProgress;
+    public QuestUI questUI;
+
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.GetComponent(_colliderScript) != null)
         {
             _collisionEntered.Invoke();
-            _questProgress.UpdateQuest();
+            questUI.currentQuests[0].objectives[0].currentAmount++;
         }
     }
 
