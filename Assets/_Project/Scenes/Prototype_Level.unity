@@ -4953,11 +4953,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2665692224333501945, guid: f6423e483341a43b0ac3bdd478ca3801, type: 3}
   m_PrefabInstance: {fileID: 558667731}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &560455576 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2252861911465127466, guid: fac5c459cf5c0774fba0309cb13f16c6, type: 3}
-  m_PrefabInstance: {fileID: 589327712}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &574884663
 GameObject:
   m_ObjectHideFlags: 0
@@ -5069,10 +5064,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 2252861911465127466, guid: fac5c459cf5c0774fba0309cb13f16c6, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 846098628}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fac5c459cf5c0774fba0309cb13f16c6, type: 3}
 --- !u!1001 &611337243
 PrefabInstance:
@@ -7099,18 +7091,6 @@ AudioSource:
   m_CorrespondingSourceObject: {fileID: 2243354373830068209, guid: fac5c459cf5c0774fba0309cb13f16c6, type: 3}
   m_PrefabInstance: {fileID: 589327712}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &846098628
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 560455576}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4a439a0787f04200904fe7d10b4c9a5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::InteractionDetector
 --- !u!4 &846098633 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9117972571005609477, guid: fac5c459cf5c0774fba0309cb13f16c6, type: 3}
