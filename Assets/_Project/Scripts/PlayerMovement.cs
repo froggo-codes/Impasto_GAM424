@@ -10,9 +10,9 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Ground Check")] [SerializeField]
     private Transform groundCheck;
-
     [SerializeField] private float groundCheckRadius = 0.2f;
     [SerializeField] private LayerMask groundLayer;
+    [SerializeField] private float safeGroundMargin = 0.6f;
 
     [Header("Wall Jump")] [SerializeField] private Transform wallCheckLeft;
     [SerializeField] private Transform wallCheckRight;
@@ -29,6 +29,10 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float climbSpeed = 4f;
     [SerializeField] private float regrabDelay = 0.25f;
 
+    [Header("Damage")]
+    [SerializeField] private Vector2 knockbackVelocity = new Vector2(6f, 8f);
+    [SerializeField] private float knockbackLockTime = 0.3f;
+    
     [Header("Piano")]
     [SerializeField] private GameObject pianoUI;
 
@@ -38,7 +42,7 @@ private Rigidbody2D rb;
     private bool isGrounded;
     private bool touchingWallLeft;
     private bool touchingWallRight;
-    private float wallJumpLockTimer;
+    private float inputLockTimer;
     private AudioSource audioSource;
 
     private float facingDirection = 1f;
@@ -53,10 +57,12 @@ private Rigidbody2D rb;
     private bool isClimbing;
     private Rope currentRope;
     private float regrabTimer;
+    private Vector2 lastSafePosition;
 
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        lastSafePosition = rb.position;
         audioSource = GetComponent<AudioSource>();
         normalGravityScale = rb.gravityScale;
     }
@@ -101,7 +107,16 @@ private Rigidbody2D rb;
         touchingWallRight = Physics2D.OverlapCircle(wallCheckRight.position, wallCheckRadius, groundLayer) != null;
 
         if (isGrounded)
+        {
             canAirDash = true;
+
+            Vector2 checkPos = groundCheck.position;
+            bool groundLeft = Physics2D.OverlapCircle(checkPos + Vector2.left * safeGroundMargin, groundCheckRadius, groundLayer) !=null;
+            bool groundRight = Physics2D.OverlapCircle(checkPos + Vector2.right * safeGroundMargin, groundCheckRadius, groundLayer) != null;
+
+            if (groundLeft && groundRight)
+                lastSafePosition = rb.position;
+        }
 
         if (dashCooldownTimer > 0f)
             dashCooldownTimer -= Time.fixedDeltaTime;
@@ -156,8 +171,8 @@ private Rigidbody2D rb;
             return;
         }
 
-        if (wallJumpLockTimer > 0f)
-            wallJumpLockTimer -= Time.fixedDeltaTime;
+        if (inputLockTimer > 0f)
+            inputLockTimer -= Time.fixedDeltaTime;
         else
             rb.linearVelocity = new Vector2(moveInput * moveSpeed, rb.linearVelocity.y);
 
@@ -174,7 +189,7 @@ private Rigidbody2D rb;
             {
                 float pushDirection = touchingWallLeft ? 1f : -1f;
                 rb.linearVelocity = new Vector2(pushDirection * wallJumpPushSpeed, jumpVelocity);
-                wallJumpLockTimer = wallJumpLockTime;
+                inputLockTimer = wallJumpLockTime;
                 audioSource.PlayOneShot(jumpSound);
             }
         }
@@ -192,7 +207,7 @@ private Rigidbody2D rb;
         isDashing = true;
         dashTimer = dashDuration;
         dashCooldownTimer = dashCooldown;
-        wallJumpLockTimer = 0f;
+        inputLockTimer = 0f;
 
         if (!isGrounded)
             canAirDash = false;
@@ -209,10 +224,19 @@ private Rigidbody2D rb;
         rb.gravityScale = normalGravityScale;
     }
 
+    public void Respawn()
+    {
+        if (isDashing) EndDash();
+        if (isClimbing) StopClimb();
+
+        rb.linearVelocity = Vector2.zero;
+        transform.position = lastSafePosition + Vector2.up * 0.5f;
+    }
+    
     void StartClimb()
     {
         isClimbing = true;
-        wallJumpLockTimer = 0f;
+        inputLockTimer = 0f;
         rb.gravityScale = 0f;
         rb.linearVelocity = Vector2.zero;
     }
@@ -235,6 +259,22 @@ private Rigidbody2D rb;
         Rope rope = other.GetComponent<Rope>();
         if (rope != null && rope == currentRope)
             currentRope = null;
+    }
+
+    public void Knockback(Vector2 sourcePosition)
+    {
+        if (isDashing) EndDash();
+        if (isClimbing) StopClimb();
+
+        float direction = transform.position.x < sourcePosition.x ? -1f : 1f;
+        rb.linearVelocity = new Vector2(direction * knockbackVelocity.x, knockbackVelocity.y);
+        inputLockTimer = knockbackLockTime;
+    }
+    
+    public void Bounce(float bounceVelocity)
+    {
+        rb.linearVelocity = new Vector2(rb.linearVelocity.x, bounceVelocity);
+        canAirDash = true;
     }
 
     void OnDrawGizmosSelected()
