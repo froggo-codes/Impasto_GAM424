@@ -2,6 +2,8 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
+//https://www.youtube.com/watch?v=_hA3y45P4Ow
+
 [CreateAssetMenu(menuName = "Quests/Quest")]
 public class Quest : ScriptableObject
 {
