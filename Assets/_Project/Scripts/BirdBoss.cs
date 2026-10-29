@@ -264,14 +264,13 @@ public class BirdBoss : MonoBehaviour
     // Called by Health's On Died after the final stomp. Ends the fight peacefully.
     [ContextMenu("Test: Calm")]
     public void Calm()
-    public void Calm()
     {
         if (state == BirdState.Calmed) return;  // only once
 
         state = BirdState.Calmed;
         spriteRenderer.color = calmColor;
         ShowNestHint(false);
-        onCalmed.Invoke();  // HOOK: The level reacts (sheet music, exit, song modde...)
+        onCalmed.Invoke();  // HOOK: The level reacts (sheet music, exit, song mode...)
     }
     
     // Called by the song spot when song 1 is played at the nest.
