@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: NPC9Dialogue
   m_EditorClassIdentifier: Assembly-CSharp::NPCDialogue
   dialogueLines:
-  - Test line 1
+  - You shouldn't go empty handed. Take this.
   autoProgressLines: 
   autoProgressDelay: 1.5
   typingSpeed: 0.05

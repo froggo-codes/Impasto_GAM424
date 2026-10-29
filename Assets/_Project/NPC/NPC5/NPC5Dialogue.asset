@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: NPC5Dialogue
   m_EditorClassIdentifier: Assembly-CSharp::NPCDialogue
   dialogueLines:
-  - Test line 1
-  autoProgressLines: 
+  - Careful if you go up top. There's something big flying around.
+  - I've heard it likes music, if you have any.
+  autoProgressLines: 00y
   autoProgressDelay: 1.5
   typingSpeed: 0.05

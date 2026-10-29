@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: NPC8Dialogue
   m_EditorClassIdentifier: Assembly-CSharp::NPCDialogue
   dialogueLines:
-  - Test line 1
+  - You sure you have everything you need? Things get weird up there.
   autoProgressLines: 
   autoProgressDelay: 1.5
   typingSpeed: 0.05

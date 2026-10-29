@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: NPC1Dialogue
   m_EditorClassIdentifier: Assembly-CSharp::NPCDialogue
   dialogueLines:
-  - Test line 1
+  - Oh, uhhh, I totally did not throw that on the ground. I swear.
   autoProgressLines: 
   autoProgressDelay: 1.5
   typingSpeed: 0.05
