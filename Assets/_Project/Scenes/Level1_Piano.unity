@@ -688,8 +688,7 @@ PrefabInstance:
     - target: {fileID: 5501060682388653064, guid: a74935f6e8b2ea94996e3241699a8135, type: 3}
       propertyPath: onSongHeard.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 7347150218122093313, guid: d69f874329c0e4359bab8b21fbb84b89, type: 3}
-      objectReference: {fileID: 196954458}
+      objectReference: {fileID: 7347150217963416152}
     - target: {fileID: 5501060682388653064, guid: a74935f6e8b2ea94996e3241699a8135, type: 3}
       propertyPath: onSongHeard.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -1523,71 +1522,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4851549174599269208, guid: 377e6d0bf93fc473f8844233fd69db3d, type: 3}
   m_PrefabInstance: {fileID: 103161278}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &108426592
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 2154622519785994386, guid: d69f874329c0e4359bab8b21fbb84b89, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7347150218122093313, guid: d69f874329c0e4359bab8b21fbb84b89, type: 3}
-      propertyPath: m_Name
-      value: SheetMusic (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 7347150218122093313, guid: d69f874329c0e4359bab8b21fbb84b89, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7352585445484952942, guid: d69f874329c0e4359bab8b21fbb84b89, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -26.388683
-      objectReference: {fileID: 0}
-    - target: {fileID: 7352585445484952942, guid: d69f874329c0e4359bab8b21fbb84b89, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 66.43522
-      objectReference: {fileID: 0}
-    - target: {fileID: 7352585445484952942, guid: d69f874329c0e4359bab8b21fbb84b89, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7352585445484952942, guid: d69f874329c0e4359bab8b21fbb84b89, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7352585445484952942, guid: d69f874329c0e4359bab8b21fbb84b89, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7352585445484952942, guid: d69f874329c0e4359bab8b21fbb84b89, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7352585445484952942, guid: d69f874329c0e4359bab8b21fbb84b89, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7352585445484952942, guid: d69f874329c0e4359bab8b21fbb84b89, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7352585445484952942, guid: d69f874329c0e4359bab8b21fbb84b89, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7352585445484952942, guid: d69f874329c0e4359bab8b21fbb84b89, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: d69f874329c0e4359bab8b21fbb84b89, type: 3}
 --- !u!1001 &109249707
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2877,6 +2811,18 @@ PrefabInstance:
       propertyPath: ID
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 4270248977870110535, guid: d69f874329c0e4359bab8b21fbb84b89, type: 3}
+      propertyPath: m_Color.b
+      value: 0.2901961
+      objectReference: {fileID: 0}
+    - target: {fileID: 4270248977870110535, guid: d69f874329c0e4359bab8b21fbb84b89, type: 3}
+      propertyPath: m_Color.g
+      value: 0.85882354
+      objectReference: {fileID: 0}
+    - target: {fileID: 4270248977870110535, guid: d69f874329c0e4359bab8b21fbb84b89, type: 3}
+      propertyPath: m_Color.r
+      value: 0.94509804
+      objectReference: {fileID: 0}
     - target: {fileID: 7347150218122093313, guid: d69f874329c0e4359bab8b21fbb84b89, type: 3}
       propertyPath: m_Name
       value: SheetMusic Bird
@@ -2936,18 +2882,13 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 196954459}
   m_SourcePrefab: {fileID: 100100000, guid: d69f874329c0e4359bab8b21fbb84b89, type: 3}
---- !u!1 &196954458 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7347150218122093313, guid: d69f874329c0e4359bab8b21fbb84b89, type: 3}
-  m_PrefabInstance: {fileID: 196954457}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &196954459
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 196954458}
+  m_GameObject: {fileID: 7347150217963416152}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 76b5f309a5a2841f5885bd1577e589a4, type: 3}
@@ -2957,7 +2898,7 @@ MonoBehaviour:
   _collisionEntered:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 196954458}
+      - m_Target: {fileID: 7347150217963416152}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
@@ -2973,13 +2914,14 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   questUI: {fileID: 1699455197}
+  item: {fileID: 2154622519693013451}
 --- !u!61 &196954460
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 196954458}
+  m_GameObject: {fileID: 7347150217963416152}
   m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
@@ -3019,11 +2961,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!4 &196954462 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7352585445484952942, guid: d69f874329c0e4359bab8b21fbb84b89, type: 3}
-  m_PrefabInstance: {fileID: 196954457}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &199861371
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7633,7 +7570,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7347150218122093313, guid: d69f874329c0e4359bab8b21fbb84b89, type: 3}
       propertyPath: m_Name
-      value: SheetMusic (1)
+      value: SheetMusicNPC1
       objectReference: {fileID: 0}
     - target: {fileID: 7347150218122093313, guid: d69f874329c0e4359bab8b21fbb84b89, type: 3}
       propertyPath: m_IsActive
@@ -7727,6 +7664,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   questUI: {fileID: 1699455197}
+  item: {fileID: 455340556}
 --- !u!61 &455340555
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7773,6 +7711,17 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &455340556 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2154622519785994386, guid: d69f874329c0e4359bab8b21fbb84b89, type: 3}
+  m_PrefabInstance: {fileID: 455340552}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 455340553}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42599d7c4df684efa8ed32d37b53b99d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Item
 --- !u!1001 &456264734
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8295,7 +8244,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7308921225510237546, guid: 685c8b6e41c9042d7b8eaecf5e649286, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -17.87136
+      value: -17.7
       objectReference: {fileID: 0}
     - target: {fileID: 7308921225510237546, guid: 685c8b6e41c9042d7b8eaecf5e649286, type: 3}
       propertyPath: m_LocalPosition.z
@@ -9086,7 +9035,7 @@ Transform:
   - {fileID: 1295948722}
   - {fileID: 1308025371}
   - {fileID: 865380171}
-  - {fileID: 196954462}
+  - {fileID: 7352585445326926903}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &521723757
@@ -13902,7 +13851,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7347150218122093313, guid: d69f874329c0e4359bab8b21fbb84b89, type: 3}
       propertyPath: m_Name
-      value: SheetMusic
+      value: SheetMusicNPC7
       objectReference: {fileID: 0}
     - target: {fileID: 7347150218122093313, guid: d69f874329c0e4359bab8b21fbb84b89, type: 3}
       propertyPath: m_IsActive
@@ -13996,6 +13945,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   questUI: {fileID: 1699455197}
+  item: {fileID: 831817812}
 --- !u!61 &831817811
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -14042,6 +13992,17 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &831817812 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2154622519785994386, guid: d69f874329c0e4359bab8b21fbb84b89, type: 3}
+  m_PrefabInstance: {fileID: 831817806}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 831817807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42599d7c4df684efa8ed32d37b53b99d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Item
 --- !u!1001 &834967200
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15847,7 +15808,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7347150218122093313, guid: d69f874329c0e4359bab8b21fbb84b89, type: 3}
       propertyPath: m_Name
-      value: SheetMusic (3)
+      value: SheetMusicNPC10
       objectReference: {fileID: 0}
     - target: {fileID: 7347150218122093313, guid: d69f874329c0e4359bab8b21fbb84b89, type: 3}
       propertyPath: m_IsActive
@@ -15940,7 +15901,8 @@ MonoBehaviour:
   _collisionExited:
     m_PersistentCalls:
       m_Calls: []
-  questUI: {fileID: 0}
+  questUI: {fileID: 1699455197}
+  item: {fileID: 962906558}
 --- !u!61 &962906557
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -15987,6 +15949,17 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &962906558 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2154622519785994386, guid: d69f874329c0e4359bab8b21fbb84b89, type: 3}
+  m_PrefabInstance: {fileID: 962906554}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 962906555}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42599d7c4df684efa8ed32d37b53b99d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Item
 --- !u!1001 &966150119
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -31208,7 +31181,7 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
 --- !u!1 &1870960343
 GameObject:
@@ -31270,7 +31243,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7347150218122093313, guid: d69f874329c0e4359bab8b21fbb84b89, type: 3}
       propertyPath: m_Name
-      value: SheetMusic (2)
+      value: SheetMusicNPC9
       objectReference: {fileID: 0}
     - target: {fileID: 7347150218122093313, guid: d69f874329c0e4359bab8b21fbb84b89, type: 3}
       propertyPath: m_IsActive
@@ -31364,6 +31337,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   questUI: {fileID: 1699455197}
+  item: {fileID: 1884290531}
 --- !u!61 &1884290530
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -31410,6 +31384,17 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1884290531 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2154622519785994386, guid: d69f874329c0e4359bab8b21fbb84b89, type: 3}
+  m_PrefabInstance: {fileID: 1884290527}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1884290528}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42599d7c4df684efa8ed32d37b53b99d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Item
 --- !u!4 &1889861609 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8329837474257977448, guid: bca2fda87914b4cd8afe0831cd9f6fe5, type: 3}
@@ -31781,7 +31766,7 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
 --- !u!1001 &1935693910
 PrefabInstance:
@@ -32836,7 +32821,7 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
 --- !u!1 &2003771266
 GameObject:
@@ -34972,6 +34957,27 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8329837474257977448, guid: bca2fda87914b4cd8afe0831cd9f6fe5, type: 3}
   m_PrefabInstance: {fileID: 2146587225}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2154622519693013451 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2154622519785994386, guid: d69f874329c0e4359bab8b21fbb84b89, type: 3}
+  m_PrefabInstance: {fileID: 196954457}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7347150217963416152}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42599d7c4df684efa8ed32d37b53b99d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Item
+--- !u!1 &7347150217963416152 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7347150218122093313, guid: d69f874329c0e4359bab8b21fbb84b89, type: 3}
+  m_PrefabInstance: {fileID: 196954457}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &7352585445326926903 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7352585445484952942, guid: d69f874329c0e4359bab8b21fbb84b89, type: 3}
+  m_PrefabInstance: {fileID: 196954457}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -35002,8 +35008,6 @@ SceneRoots:
   - {fileID: 463393923}
   - {fileID: 515634114}
   - {fileID: 253333145}
-  - {fileID: 196954457}
-  - {fileID: 108426592}
   - {fileID: 831817806}
   - {fileID: 455340552}
   - {fileID: 1884290527}
