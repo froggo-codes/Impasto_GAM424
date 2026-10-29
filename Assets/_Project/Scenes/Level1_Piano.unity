@@ -674,6 +674,18 @@ PrefabInstance:
       propertyPath: attacks.Array.data[4].swoopDuration
       value: 0.8
       objectReference: {fileID: 0}
+    - target: {fileID: 5501060682388653064, guid: a74935f6e8b2ea94996e3241699a8135, type: 3}
+      propertyPath: onCalmed.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5501060682388653064, guid: a74935f6e8b2ea94996e3241699a8135, type: 3}
+      propertyPath: onSongHeard.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5501060682388653064, guid: a74935f6e8b2ea94996e3241699a8135, type: 3}
+      propertyPath: onSongHeard.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8821819415809736415, guid: a74935f6e8b2ea94996e3241699a8135, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.25

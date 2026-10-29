@@ -65,6 +65,10 @@ public class BirdBoss : MonoBehaviour
     [SerializeField] private UnityEvent onCalmed;       // HOOK: fires once when the bird is calmed
     [SerializeField] private Transform calmNest;        // Where the bird will rest once calmed
 
+    [Header("Song")] 
+    [SerializeField] private UnityEvent onSongHeard;    // HOOK: Fires once  when the calmed bird hears the song
+    private bool songHeard;                             // Has the reward already been claimed?
+
     private int hitsTaken; // stomps landed so far
 
     private Health health;
@@ -258,6 +262,8 @@ public class BirdBoss : MonoBehaviour
     }
     
     // Called by Health's On Died after the final stomp. Ends the fight peacefully.
+    [ContextMenu("Test: Calm")]
+    public void Calm()
     public void Calm()
     {
         if (state == BirdState.Calmed) return;  // only once
@@ -266,6 +272,18 @@ public class BirdBoss : MonoBehaviour
         spriteRenderer.color = calmColor;
         ShowNestHint(false);
         onCalmed.Invoke();  // HOOK: The level reacts (sheet music, exit, song modde...)
+    }
+    
+    // Called by the song spot when song 1 is played at the nest.
+    // Only works once the bird is calmed, and only once.
+    [ContextMenu("Test: Hear Song")]
+    public void HearSong()
+    {
+        if (state != BirdState.Calmed) return;  //playing the song mid-fight does nothing
+        if (songHeard) return;                  // only give the reward once
+
+        songHeard = true;
+        onSongHeard.Invoke();   // HOOK: reveal the song2, page4 pickup
     }
     
     // Moves one step toward target. Returns true once it has arrived.
