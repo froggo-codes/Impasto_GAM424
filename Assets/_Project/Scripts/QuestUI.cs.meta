@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: a0c4794b1e91241f983ed414126fb65e
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - questListContent: {instanceID: 0}
+  - questEntryPrefab: {instanceID: 0}
+  - objectiveTextPrefab: {instanceID: 0}
+  - currentQuest: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
