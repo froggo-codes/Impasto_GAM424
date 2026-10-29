@@ -50,8 +50,6 @@ public class BirdBoss : MonoBehaviour
     [SerializeField] private Color telegraphColor = Color.red;
     [SerializeField] private bool showNestHint = true;      // light up the target nest? (difficulty lever)
     [SerializeField] private Color nestHintColor = Color.yellow;
-    [SerializeField] private float swwopTimeScale = 1.5f;
-    [SerializeField] private Transform swoopFloor;
 
     [Header("Combat")] 
     [SerializeField] private float stunTime = 2f;    // how long it says dazed after a stomp
@@ -63,11 +61,6 @@ public class BirdBoss : MonoBehaviour
     [SerializeField] private float speedUpPerHit = 0.15f;    // each stomp makes timing 15% shorter
     [SerializeField] private Color calmColor = Color.green;
     [SerializeField] private UnityEvent onCalmed;       // HOOK: fires once when the bird is calmed
-    [SerializeField] private Transform calmNest;        // Where the bird will rest once calmed
-
-    [Header("Song")] 
-    [SerializeField] private UnityEvent onSongHeard;    // HOOK: Fires once  when the calmed bird hears the song
-    private bool songHeard;                             // Has the reward already been claimed?
 
     private int hitsTaken; // stomps landed so far
 
@@ -125,7 +118,7 @@ public class BirdBoss : MonoBehaviour
             case BirdState.Nested: UpdateNested(); break;
             case BirdState.Stunned: UpdateStunned(); break;
             case BirdState.Returning: UpdateReturning(); break;
-            case BirdState.Calmed: UpdateCalmed(); break;   // fly to CalmNest and rest
+            case BirdState.Calmed: break;   // does nothing; the fight is over
         }
     }
     
@@ -181,15 +174,6 @@ public class BirdBoss : MonoBehaviour
         // and the halfway mark of the dive lands exactly on them.
         swoopControl = 2f * target - 0.5f * (swoopStart + swoopEnd);
 
-        // If this dive would dip below the arena floor, raise its bend point
-        // just enough that the bottom of the U touches the floor
-        if (swoopFloor != null)
-        {
-            float floorY = swoopFloor.position.y;
-            float floorControlY = floorY - Mathf.Sqrt(Mathf.Max(0f, (swoopStart.y - floorY) * (swoopEnd.y - floorY)));
-            swoopControl.y = Mathf.Max(swoopControl.y, floorControlY);
-        }
-        
         swoopTimer = 0f;
         state = BirdState.Swooping;
     }
@@ -198,7 +182,7 @@ public class BirdBoss : MonoBehaviour
     void UpdateSwooping()
     {
         swoopTimer += Time.fixedDeltaTime;
-        float t = Mathf.Clamp01(swoopTimer / (currentAttack.swoopDuration * swwopTimeScale * GetPace()));  // 0 = start, 1 = nest
+        float t = Mathf.Clamp01(swoopTimer / (currentAttack.swoopDuration * GetPace()));  // 0 = start, 1 = nest
         rb.MovePosition(Bezier(swoopStart, swoopControl, swoopEnd, t));
 
         if (t >= 1f)
@@ -229,13 +213,6 @@ public class BirdBoss : MonoBehaviour
         state = BirdState.Returning;
     }
     
-    // CALMED: fly up to the CalmNest and rest there for good.
-    void UpdateCalmed()
-    {
-        if (calmNest != null)
-            FlyTowards(calmNest.position);
-    }
-    
     // RETURNING: fly back to the oval, then start drifting again
     void UpdateReturning()
     {
@@ -262,7 +239,6 @@ public class BirdBoss : MonoBehaviour
     }
     
     // Called by Health's On Died after the final stomp. Ends the fight peacefully.
-    [ContextMenu("Test: Calm")]
     public void Calm()
     {
         if (state == BirdState.Calmed) return;  // only once
@@ -270,19 +246,7 @@ public class BirdBoss : MonoBehaviour
         state = BirdState.Calmed;
         spriteRenderer.color = calmColor;
         ShowNestHint(false);
-        onCalmed.Invoke();  // HOOK: The level reacts (sheet music, exit, song mode...)
-    }
-    
-    // Called by the song spot when song 1 is played at the nest.
-    // Only works once the bird is calmed, and only once.
-    [ContextMenu("Test: Hear Song")]
-    public void HearSong()
-    {
-        if (state != BirdState.Calmed) return;  //playing the song mid-fight does nothing
-        if (songHeard) return;                  // only give the reward once
-
-        songHeard = true;
-        onSongHeard.Invoke();   // HOOK: reveal the song2, page4 pickup
+        onCalmed.Invoke();  // HOOK: The level reacts (sheet music, exit, song modde...)
     }
     
     // Moves one step toward target. Returns true once it has arrived.
