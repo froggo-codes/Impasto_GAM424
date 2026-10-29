@@ -2,8 +2,6 @@ using System.Collections;
 using TMPro;
 using UnityEngine;
 
-//Calls the Interact method which is defined as a dialogue script in the case of NPCs.
-
 public class NPC : MonoBehaviour, IInteractable
 {
     public NPCDialogue dialogueData;

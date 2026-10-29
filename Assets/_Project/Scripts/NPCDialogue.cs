@@ -1,7 +1,5 @@
 using UnityEngine;
 
-//Creates the Dialogue scriptable object that can be attached to NPCs to provide dialogue data. Use the Dialogue option in the Create menu.
-
 [CreateAssetMenu(fileName = "NewNPCDialogue", menuName = "NPC Dialogue")]   
 public class NPCDialogue : ScriptableObject
 {

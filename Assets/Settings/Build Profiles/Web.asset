@@ -20,8 +20,11 @@ MonoBehaviour:
     rid: 854312299593203718
   m_ActivePlatformGuid: 
   m_AdditionalPlatformBuildSettings: []
-  m_OverrideGlobalSceneList: 0
-  m_Scenes: []
+  m_OverrideGlobalSceneList: 1
+  m_Scenes:
+  - m_enabled: 1
+    m_path: Assets/_Project/Scenes/Level1_Piano.unity
+    m_guid: 51cee9a237926c142b16aa7980772aaf
   m_HasScriptingDefines: 0
   m_ScriptingDefines: []
   m_PlayerSettingsYaml:
