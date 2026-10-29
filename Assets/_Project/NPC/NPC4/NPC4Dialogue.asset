@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: NPC4Dialogue
   m_EditorClassIdentifier: Assembly-CSharp::NPCDialogue
   dialogueLines:
-  - Nam aut excepturi voluptatibus commodi aspernatur. Qui eveniet non amet molestiae beatae. Sit eaque inventore nobis laudantium quaerat modi.
-  autoProgressLines: 
+  - Hey, you're new here aren't you? Welcome to the Piano.
+  - No, I don't know why it's called that.
+  autoProgressLines: 00y
   autoProgressDelay: 1.5
   typingSpeed: 0.05

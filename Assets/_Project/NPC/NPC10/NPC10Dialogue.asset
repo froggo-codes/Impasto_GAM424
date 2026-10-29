@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: NPC10Dialogue
   m_EditorClassIdentifier: Assembly-CSharp::NPCDialogue
   dialogueLines:
-  - Test line 1
-  autoProgressLines: 
+  - I don't have time to learn music, I'm very busy.
+  - You seem like you could use something to do. You can have this.
+  autoProgressLines: 00y
   autoProgressDelay: 1.5
   typingSpeed: 0.05

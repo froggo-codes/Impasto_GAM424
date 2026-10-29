@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: NPC7Dialogue
   m_EditorClassIdentifier: Assembly-CSharp::NPCDialogue
   dialogueLines:
-  - Test line 1
+  - I found this. Do you want it?
   autoProgressLines: 
   autoProgressDelay: 1.5
   typingSpeed: 0.05
