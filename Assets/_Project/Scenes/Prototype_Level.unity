@@ -1397,6 +1397,8 @@ MonoBehaviour:
   target: {fileID: 846098633}
   smoothTime: 0.15
   offset: {x: 0, y: 1}
+  boundsMin: {fileID: 0}
+  boundsMax: {fileID: 0}
 --- !u!1001 &153549416
 PrefabInstance:
   m_ObjectHideFlags: 0
