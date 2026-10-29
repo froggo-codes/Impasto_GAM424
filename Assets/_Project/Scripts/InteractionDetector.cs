@@ -1,6 +1,8 @@
 using UnityEngine;
 using UnityEngine.InputSystem; 
 
+//Checks if an NPC or other object is interactable. Currently used to initiate dialogue.
+
 public class InteractionDetector : MonoBehaviour
 {
     private IInteractable interactableInRange = null; //Closest interactable
