@@ -2,6 +2,9 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
+//https://www.youtube.com/watch?v=sQyj7z9W7kk
+//Instantiates quest UI prefabs when a scene is loaded and receives updates from the Collision Detector script.
+
 public class QuestUI : MonoBehaviour
 {
     public Transform questListContent;

@@ -2,6 +2,10 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
+//https://www.youtube.com/watch?v=_hA3y45P4Ow
+//Creates Quest scriptable object from the Create menu for setting up varied quests across the game. 
+//Will need to implement Quest Controller if we want to trigger quests, but for now we can have a quest per level/scene.
+
 [CreateAssetMenu(menuName = "Quests/Quest")]
 public class Quest : ScriptableObject
 {

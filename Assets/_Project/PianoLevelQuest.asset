@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3a930c9b6ce604957a8f8fc157b194f6, type: 3}
-  m_Name: CollectKey
+  m_Name: PianoLevelQuest
   m_EditorClassIdentifier: Assembly-CSharp::Quest
-  questID: C2ba474ff-ec51-4162-b03c-ed49f9d90fb6
-  questName: Collect Keys
+  questID: P81fb1d88-7e11-440e-8573-6bbe3ce53132
+  questName: PianoLevel
   objectives:
-  - objectiveID: 1
+  - objectiveID: 2
     type: 0
     requiredAmount: 2
     currentAmount: 0

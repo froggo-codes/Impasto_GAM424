@@ -7,7 +7,7 @@ MonoImporter:
   - questListContent: {instanceID: 0}
   - questEntryPrefab: {instanceID: 0}
   - objectiveTextPrefab: {instanceID: 0}
-  - testQuest: {instanceID: 0}
+  - currentQuest: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

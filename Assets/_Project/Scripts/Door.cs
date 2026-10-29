@@ -1,5 +1,7 @@
 using UnityEngine;
 
+//Defines the Door.Open method.
+
 public class Door : MonoBehaviour
 {
     [SerializeField] private AudioClip _openSound;

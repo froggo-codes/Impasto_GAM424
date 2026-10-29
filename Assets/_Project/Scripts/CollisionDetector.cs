@@ -1,6 +1,9 @@
 using UnityEngine;
 using UnityEngine.Events;
 
+//https://www.youtube.com/watch?v=1IJmenD1HOk
+//Detects collision with quest objects. 
+//For now this only works with a quest that has a single objective. Will need to update with another loop if we want to expand.
 
 public class CollisionDetector : MonoBehaviour
 {
