@@ -11376,10 +11376,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PianoPuzzle
   buttons:
   - {fileID: 1634002483}
-  - {fileID: 1203659834}
-  - {fileID: 1634002483}
   - {fileID: 500660784}
   - {fileID: 1502090293}
+  - {fileID: 1203659834}
 --- !u!1001 &653446353
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20036,11 +20035,11 @@ PrefabInstance:
       objectReference: {fileID: 1390506880}
     - target: {fileID: 9117972571005609477, guid: fac5c459cf5c0774fba0309cb13f16c6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -22.93
+      value: -1.8
       objectReference: {fileID: 0}
     - target: {fileID: 9117972571005609477, guid: fac5c459cf5c0774fba0309cb13f16c6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 45.23
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 9117972571005609477, guid: fac5c459cf5c0774fba0309cb13f16c6, type: 3}
       propertyPath: m_LocalPosition.z
