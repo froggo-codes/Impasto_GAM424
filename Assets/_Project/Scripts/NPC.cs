@@ -98,6 +98,6 @@ public class NPC : MonoBehaviour, IInteractable
         isDialogueActive = false;
         dialogueText.SetText("");
         dialoguePanel.SetActive(false);
-        //PauseController.SetPause(false);
+        PauseController.SetPause(false);
     }
 }
