@@ -69,6 +69,8 @@ private Rigidbody2D rb;
 
     void Update()
     {
+        if (PauseController.IsGamePaused) return;
+        
         moveInput = 0f;
 
         if (Keyboard.current.aKey.isPressed || Keyboard.current.leftArrowKey.isPressed)
