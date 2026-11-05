@@ -10,10 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 393e5f587def348289200ab40f2e8f3f, type: 3}
-  m_Name: NPC8Dialogue
+  m_Name: PipDialogue
   m_EditorClassIdentifier: Assembly-CSharp::NPCDialogue
+  npcName: Pip, a Stone with an Eye
   dialogueLines:
-  - You sure you have everything you need? Things get weird up there.
+  - "Psst. I\u2019m an eye, I see things! "
+  - "See that big orange rock? That\u2019s Cecilia. She\u2019s the patron saint of music. "
+  - "Take the page. It\u2019s been staring at me. "
   autoProgressLines: 
   autoProgressDelay: 1.5
   typingSpeed: 0.05

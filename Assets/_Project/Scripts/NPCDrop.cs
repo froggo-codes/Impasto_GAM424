@@ -4,34 +4,35 @@ using UnityEngine;
 using UnityEngine.Events;
 
 //Calls the Interact method which is defined as a dialogue script in the case of NPCs.
+//https://www.youtube.com/watch?v=eSH9mzcMRqw
 
 public class NPCDrop : MonoBehaviour, IInteractable
 {
     public NPCDialogue dialogueData;
     public GameObject dialoguePanel;
-    public TMP_Text dialogueText; //nameText;
+    public TMP_Text dialogueText, nameText;
     //public Image portraitImage;
 
     private int dialogueIndex;
-    private bool isTyping, isDialogueActive;
+    private bool isTyping, isDialogueActive, talkedTo;
 
     [SerializeField] private UnityEvent onDialogueEnd;
 
     public bool CanInteract()
     {
-        return !isDialogueActive;
+        return !isDialogueActive && !talkedTo;
     }
 
     public void Interact()
     {
-        if (dialogueData == null) // If we add a pause menu also include: || (PauseController.IsGamePaused && !isDialogueAtive)
+        if (dialogueData == null || (PauseController.IsGamePaused && !isDialogueActive && talkedTo)) // If no dialogue data or the game is paused and no dialogue is active, return
             return;
 
-        if (isDialogueActive)
+        if (isDialogueActive) // If dialogue is active, call next line
         {
             NextLine();
         }
-        else
+        else if(!talkedTo) // Otherwise start dialogue
         {
             StartDialogue();
         }
@@ -41,12 +42,13 @@ public class NPCDrop : MonoBehaviour, IInteractable
     {
         isDialogueActive = true;
         dialogueIndex = 0;
+        talkedTo = true;
         
-        //nameText.SetText(dialogueData.npcName);
+        nameText.SetText(dialogueData.npcName);
         //portraitImage.sprite = dialogueData.npcPortrait;
 
         dialoguePanel.SetActive(true);
-        //PauseController.SetPause(true); If we add a pause menu
+        PauseController.SetPause(true); 
 
         StartCoroutine(TypeLine());
 
@@ -80,14 +82,14 @@ public class NPCDrop : MonoBehaviour, IInteractable
         foreach(char letter in dialogueData.dialogueLines[dialogueIndex])
         {
             dialogueText.text += letter;
-            yield return new WaitForSeconds(dialogueData.typingSpeed);
+            yield return new WaitForSecondsRealtime(dialogueData.typingSpeed);
         }
 
         isTyping = false;
 
         if(dialogueData.autoProgressLines.Length > dialogueIndex && dialogueData.autoProgressLines[dialogueIndex])
         {
-            yield return new WaitForSeconds(dialogueData.autoProgressDelay);
+            yield return new WaitForSecondsRealtime(dialogueData.autoProgressDelay);
             NextLine();
         }
 
@@ -98,7 +100,7 @@ public class NPCDrop : MonoBehaviour, IInteractable
         isDialogueActive = false;
         dialogueText.SetText("");
         dialoguePanel.SetActive(false);
-        //PauseController.SetPause(false);
-        onDialogueEnd.Invoke();
+        PauseController.SetPause(false);
+        onDialogueEnd.Invoke(); // Drop the quest item
     }
 }
