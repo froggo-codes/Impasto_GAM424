@@ -1465,8 +1465,8 @@ MonoBehaviour:
   _collisionExited:
     m_PersistentCalls:
       m_Calls: []
-  questUI: {fileID: 0}
-  item: {fileID: 0}
+  questUI: {fileID: 1699455197}
+  item: {fileID: 95649100}
 --- !u!61 &95649099
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1513,6 +1513,17 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &95649100 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2154622519785994386, guid: d69f874329c0e4359bab8b21fbb84b89, type: 3}
+  m_PrefabInstance: {fileID: 95649094}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 95649096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42599d7c4df684efa8ed32d37b53b99d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Item
 --- !u!1001 &98497767
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3197,8 +3208,8 @@ MonoBehaviour:
   _collisionExited:
     m_PersistentCalls:
       m_Calls: []
-  questUI: {fileID: 0}
-  item: {fileID: 0}
+  questUI: {fileID: 1699455197}
+  item: {fileID: 7352585445326926904}
 --- !u!61 &196954460
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8263,8 +8274,8 @@ MonoBehaviour:
   _collisionExited:
     m_PersistentCalls:
       m_Calls: []
-  questUI: {fileID: 0}
-  item: {fileID: 0}
+  questUI: {fileID: 1699455197}
+  item: {fileID: 455340558}
 --- !u!61 &455340555
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8316,6 +8327,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7352585445484952942, guid: d69f874329c0e4359bab8b21fbb84b89, type: 3}
   m_PrefabInstance: {fileID: 455340552}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &455340558 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2154622519785994386, guid: d69f874329c0e4359bab8b21fbb84b89, type: 3}
+  m_PrefabInstance: {fileID: 455340552}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 455340553}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42599d7c4df684efa8ed32d37b53b99d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Item
 --- !u!1001 &456264734
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14648,8 +14670,8 @@ MonoBehaviour:
   _collisionExited:
     m_PersistentCalls:
       m_Calls: []
-  questUI: {fileID: 0}
-  item: {fileID: 0}
+  questUI: {fileID: 1699455197}
+  item: {fileID: 831817814}
 --- !u!61 &831817811
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -14701,6 +14723,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7352585445484952942, guid: d69f874329c0e4359bab8b21fbb84b89, type: 3}
   m_PrefabInstance: {fileID: 831817806}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &831817814 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2154622519785994386, guid: d69f874329c0e4359bab8b21fbb84b89, type: 3}
+  m_PrefabInstance: {fileID: 831817806}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 831817807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42599d7c4df684efa8ed32d37b53b99d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Item
 --- !u!1 &832859198 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2889806202694004059, guid: 685c8b6e41c9042d7b8eaecf5e649286, type: 3}
@@ -16647,8 +16680,8 @@ MonoBehaviour:
   _collisionExited:
     m_PersistentCalls:
       m_Calls: []
-  questUI: {fileID: 0}
-  item: {fileID: 0}
+  questUI: {fileID: 1699455197}
+  item: {fileID: 962906560}
 --- !u!61 &962906557
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -16700,6 +16733,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7352585445484952942, guid: d69f874329c0e4359bab8b21fbb84b89, type: 3}
   m_PrefabInstance: {fileID: 962906554}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &962906560 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2154622519785994386, guid: d69f874329c0e4359bab8b21fbb84b89, type: 3}
+  m_PrefabInstance: {fileID: 962906554}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 962906555}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42599d7c4df684efa8ed32d37b53b99d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Item
 --- !u!1001 &966150119
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22893,8 +22937,8 @@ MonoBehaviour:
   _collisionExited:
     m_PersistentCalls:
       m_Calls: []
-  questUI: {fileID: 0}
-  item: {fileID: 0}
+  questUI: {fileID: 1699455197}
+  item: {fileID: 1295889285}
 --- !u!61 &1295889284
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -22941,6 +22985,17 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1295889285 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2154622519785994386, guid: d69f874329c0e4359bab8b21fbb84b89, type: 3}
+  m_PrefabInstance: {fileID: 1295889279}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1295889281}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42599d7c4df684efa8ed32d37b53b99d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Item
 --- !u!1 &1295948721
 GameObject:
   m_ObjectHideFlags: 0
@@ -32505,8 +32560,8 @@ MonoBehaviour:
   _collisionExited:
     m_PersistentCalls:
       m_Calls: []
-  questUI: {fileID: 0}
-  item: {fileID: 0}
+  questUI: {fileID: 1699455197}
+  item: {fileID: 1884290533}
 --- !u!61 &1884290530
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -32558,6 +32613,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7352585445484952942, guid: d69f874329c0e4359bab8b21fbb84b89, type: 3}
   m_PrefabInstance: {fileID: 1884290527}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1884290533 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2154622519785994386, guid: d69f874329c0e4359bab8b21fbb84b89, type: 3}
+  m_PrefabInstance: {fileID: 1884290527}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1884290528}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42599d7c4df684efa8ed32d37b53b99d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Item
 --- !u!4 &1889861609 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8329837474257977448, guid: bca2fda87914b4cd8afe0831cd9f6fe5, type: 3}
@@ -33813,8 +33879,8 @@ MonoBehaviour:
   _collisionExited:
     m_PersistentCalls:
       m_Calls: []
-  questUI: {fileID: 0}
-  item: {fileID: 0}
+  questUI: {fileID: 1699455197}
+  item: {fileID: 1971831202}
 --- !u!61 &1971831200
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -33866,6 +33932,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7352585445484952942, guid: d69f874329c0e4359bab8b21fbb84b89, type: 3}
   m_PrefabInstance: {fileID: 1971831196}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1971831202 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2154622519785994386, guid: d69f874329c0e4359bab8b21fbb84b89, type: 3}
+  m_PrefabInstance: {fileID: 1971831196}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1971831197}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42599d7c4df684efa8ed32d37b53b99d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Item
 --- !u!1001 &1975169779
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -36397,6 +36474,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7352585445484952942, guid: d69f874329c0e4359bab8b21fbb84b89, type: 3}
   m_PrefabInstance: {fileID: 196954457}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &7352585445326926904 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2154622519785994386, guid: d69f874329c0e4359bab8b21fbb84b89, type: 3}
+  m_PrefabInstance: {fileID: 196954457}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7347150217963416152}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42599d7c4df684efa8ed32d37b53b99d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Item
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
