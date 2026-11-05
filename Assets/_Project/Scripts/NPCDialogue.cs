@@ -5,7 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "NewNPCDialogue", menuName = "NPC Dialogue")]   
 public class NPCDialogue : ScriptableObject
 {
-    //public string npcName;
+    public string npcName;
     //public Sprite npcPortrait;
     public string[] dialogueLines;
     public bool[] autoProgressLines; // Array to determine if each line should auto-progress after a delay

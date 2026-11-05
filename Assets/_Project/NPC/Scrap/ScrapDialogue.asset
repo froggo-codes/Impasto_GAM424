@@ -10,10 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 393e5f587def348289200ab40f2e8f3f, type: 3}
-  m_Name: NPC9Dialogue
+  m_Name: ScrapDialogue
   m_EditorClassIdentifier: Assembly-CSharp::NPCDialogue
+  npcName: Scrap, the Collage Kid
   dialogueLines:
-  - You shouldn't go empty handed. Take this.
-  autoProgressLines: 
+  - "Rules? Ernst broke\u2019em. That\u2019s Dada. "
+  - 'Then he helped start Surrealism. Dreams that look real. Like you! '
+  - 'Page! Catch! '
+  autoProgressLines: 00y
   autoProgressDelay: 1.5
   typingSpeed: 0.05
