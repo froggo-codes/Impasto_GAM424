@@ -15,23 +15,23 @@ public class CollisionDetector : MonoBehaviour
 
     [SerializeField]
     private UnityEvent _collisionExited; 
-    public QuestUI questUI;
-    public Item item;
+    public QuestUI questUI; 
+    public Item item; 
 
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.GetComponent(_colliderScript) != null)
         {
-            _collisionEntered.Invoke();
-            if(item.ID == "2") 
+            _collisionEntered.Invoke(); 
+            if(item.ID == "2")
             {
-                questUI.currentQuests[0].objectives[0].currentAmount++;
-            }
-            if(item.ID == "3")
+                questUI.currentQuests[0].objectives[0].currentAmount++; 
+            } 
+            if(item.ID == "3") 
             {
-                questUI.currentQuests[0].objectives[1].currentAmount++;
-            }
+                questUI.currentQuests[0].objectives[1].currentAmount++; 
+            } 
         }
     }
 
