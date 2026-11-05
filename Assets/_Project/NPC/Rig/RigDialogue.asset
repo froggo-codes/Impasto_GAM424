@@ -10,11 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 393e5f587def348289200ab40f2e8f3f, type: 3}
-  m_Name: NPC5Dialogue
+  m_Name: RigDialogue
   m_EditorClassIdentifier: Assembly-CSharp::NPCDialogue
+  npcName: Rig, The Stagehand
   dialogueLines:
-  - Careful if you go up top. There's something big flying around.
-  - I've heard it likes music, if you have any.
-  autoProgressLines: 00y
+  - "Watch your step. Scaffold\u2019s been shaky since the magic hit. "
+  - "You\u2019re inside Max Ernst\u2019s Saint Cecilia. What\u2019s left of it, anyway. "
+  - "The song blew apart. Here\u2019s a page. Go find the rest. "
+  autoProgressLines: 
   autoProgressDelay: 1.5
   typingSpeed: 0.05

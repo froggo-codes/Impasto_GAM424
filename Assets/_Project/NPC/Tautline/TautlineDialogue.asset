@@ -10,10 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 393e5f587def348289200ab40f2e8f3f, type: 3}
-  m_Name: NPC0Dialogue
+  m_Name: TautlineDialogue
   m_EditorClassIdentifier: Assembly-CSharp::NPCDialogue
+  npcName: Tautline, the Rope-Tuner
   dialogueLines:
-  - Huh...
+  - "Shh. Can\u2019t you see I\u2019m tuning? "
+  - 'Legend says Cecilia sang in her heart at her own wedding. Nobody heard a note. '
+  - 'An invisible piano. Get it? Take this, maybe you can complete the song. '
   autoProgressLines: 
   autoProgressDelay: 1.5
   typingSpeed: 0.05

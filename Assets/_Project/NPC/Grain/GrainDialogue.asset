@@ -10,11 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 393e5f587def348289200ab40f2e8f3f, type: 3}
-  m_Name: NPC10Dialogue
+  m_Name: GrainDialogue
   m_EditorClassIdentifier: Assembly-CSharp::NPCDialogue
+  npcName: Grain, the Rubbing Artist
   dialogueLines:
-  - I don't have time to learn music, I'm very busy.
-  - You seem like you could use something to do. You can have this.
+  - 'Paper. Wood. Pencil. Rub. '
+  - 'Frottage, Ernst called it. Try it on a coin sometime. '
+  - "Take the page. Don\u2019t smudge it. "
   autoProgressLines: 00y
   autoProgressDelay: 1.5
   typingSpeed: 0.05
