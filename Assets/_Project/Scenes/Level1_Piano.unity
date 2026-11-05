@@ -1430,17 +1430,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7347150218122093313, guid: d69f874329c0e4359bab8b21fbb84b89, type: 3}
   m_PrefabInstance: {fileID: 95649094}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &95649097 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2154622519785994386, guid: d69f874329c0e4359bab8b21fbb84b89, type: 3}
-  m_PrefabInstance: {fileID: 95649094}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 95649096}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 42599d7c4df684efa8ed32d37b53b99d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Item
 --- !u!114 &95649098
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1472,8 +1461,6 @@ MonoBehaviour:
   _collisionExited:
     m_PersistentCalls:
       m_Calls: []
-  questUI: {fileID: 1699455197}
-  item: {fileID: 95649097}
 --- !u!61 &95649099
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3204,8 +3191,6 @@ MonoBehaviour:
   _collisionExited:
     m_PersistentCalls:
       m_Calls: []
-  questUI: {fileID: 1699455197}
-  item: {fileID: 2154622519693013451}
 --- !u!61 &196954460
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8270,8 +8255,6 @@ MonoBehaviour:
   _collisionExited:
     m_PersistentCalls:
       m_Calls: []
-  questUI: {fileID: 1699455197}
-  item: {fileID: 455340556}
 --- !u!61 &455340555
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8318,17 +8301,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &455340556 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2154622519785994386, guid: d69f874329c0e4359bab8b21fbb84b89, type: 3}
-  m_PrefabInstance: {fileID: 455340552}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 455340553}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 42599d7c4df684efa8ed32d37b53b99d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Item
 --- !u!4 &455340557 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7352585445484952942, guid: d69f874329c0e4359bab8b21fbb84b89, type: 3}
@@ -11227,8 +11199,8 @@ MonoBehaviour:
   target: {fileID: 1799333063}
   smoothTime: 0.15
   offset: {x: 0, y: 1}
-  levelBoundsMin: {fileID: 651219587}
-  levelBoundsMax: {fileID: 463393923}
+  boundsMin: {fileID: 651219587}
+  boundsMax: {fileID: 463393923}
   arenaMin: {fileID: 1295948722}
   arenaMax: {fileID: 1308025371}
   zoomToFitArena: 1
@@ -14666,8 +14638,6 @@ MonoBehaviour:
   _collisionExited:
     m_PersistentCalls:
       m_Calls: []
-  questUI: {fileID: 1699455197}
-  item: {fileID: 831817812}
 --- !u!61 &831817811
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -14714,17 +14684,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &831817812 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2154622519785994386, guid: d69f874329c0e4359bab8b21fbb84b89, type: 3}
-  m_PrefabInstance: {fileID: 831817806}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 831817807}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 42599d7c4df684efa8ed32d37b53b99d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Item
 --- !u!4 &831817813 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7352585445484952942, guid: d69f874329c0e4359bab8b21fbb84b89, type: 3}
@@ -16676,8 +16635,6 @@ MonoBehaviour:
   _collisionExited:
     m_PersistentCalls:
       m_Calls: []
-  questUI: {fileID: 1699455197}
-  item: {fileID: 962906558}
 --- !u!61 &962906557
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -16724,17 +16681,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &962906558 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2154622519785994386, guid: d69f874329c0e4359bab8b21fbb84b89, type: 3}
-  m_PrefabInstance: {fileID: 962906554}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 962906555}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 42599d7c4df684efa8ed32d37b53b99d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Item
 --- !u!4 &962906559 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7352585445484952942, guid: d69f874329c0e4359bab8b21fbb84b89, type: 3}
@@ -22902,17 +22848,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7347150218122093313, guid: d69f874329c0e4359bab8b21fbb84b89, type: 3}
   m_PrefabInstance: {fileID: 1295889279}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1295889282 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2154622519785994386, guid: d69f874329c0e4359bab8b21fbb84b89, type: 3}
-  m_PrefabInstance: {fileID: 1295889279}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1295889281}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 42599d7c4df684efa8ed32d37b53b99d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Item
 --- !u!114 &1295889283
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22944,8 +22879,6 @@ MonoBehaviour:
   _collisionExited:
     m_PersistentCalls:
       m_Calls: []
-  questUI: {fileID: 1699455197}
-  item: {fileID: 1295889282}
 --- !u!61 &1295889284
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -32556,8 +32489,6 @@ MonoBehaviour:
   _collisionExited:
     m_PersistentCalls:
       m_Calls: []
-  questUI: {fileID: 1699455197}
-  item: {fileID: 1884290531}
 --- !u!61 &1884290530
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -32604,17 +32535,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &1884290531 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2154622519785994386, guid: d69f874329c0e4359bab8b21fbb84b89, type: 3}
-  m_PrefabInstance: {fileID: 1884290527}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1884290528}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 42599d7c4df684efa8ed32d37b53b99d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Item
 --- !u!4 &1884290532 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7352585445484952942, guid: d69f874329c0e4359bab8b21fbb84b89, type: 3}
@@ -33844,17 +33764,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7347150218122093313, guid: d69f874329c0e4359bab8b21fbb84b89, type: 3}
   m_PrefabInstance: {fileID: 1971831196}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1971831198 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2154622519785994386, guid: d69f874329c0e4359bab8b21fbb84b89, type: 3}
-  m_PrefabInstance: {fileID: 1971831196}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1971831197}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 42599d7c4df684efa8ed32d37b53b99d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Item
 --- !u!114 &1971831199
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33886,8 +33795,6 @@ MonoBehaviour:
   _collisionExited:
     m_PersistentCalls:
       m_Calls: []
-  questUI: {fileID: 1699455197}
-  item: {fileID: 1971831198}
 --- !u!61 &1971831200
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -35230,9 +35137,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  onPlayerExited:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!61 &2068404368
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -36448,17 +36352,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8329837474257977448, guid: bca2fda87914b4cd8afe0831cd9f6fe5, type: 3}
   m_PrefabInstance: {fileID: 2146587225}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2154622519693013451 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2154622519785994386, guid: d69f874329c0e4359bab8b21fbb84b89, type: 3}
-  m_PrefabInstance: {fileID: 196954457}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7347150217963416152}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 42599d7c4df684efa8ed32d37b53b99d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Item
 --- !u!1 &7347150217963416152 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7347150218122093313, guid: d69f874329c0e4359bab8b21fbb84b89, type: 3}
