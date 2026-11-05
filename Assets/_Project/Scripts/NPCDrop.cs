@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.Events;
 
 //Calls the Interact method which is defined as a dialogue script in the case of NPCs.
+//https://www.youtube.com/watch?v=eSH9mzcMRqw
 
 public class NPCDrop : MonoBehaviour, IInteractable
 {
@@ -13,25 +14,25 @@ public class NPCDrop : MonoBehaviour, IInteractable
     //public Image portraitImage;
 
     private int dialogueIndex;
-    private bool isTyping, isDialogueActive;
+    private bool isTyping, isDialogueActive, talkedTo;
 
     [SerializeField] private UnityEvent onDialogueEnd;
 
     public bool CanInteract()
     {
-        return !isDialogueActive;
+        return !isDialogueActive && !talkedTo;
     }
 
     public void Interact()
     {
-        if (dialogueData == null || (PauseController.IsGamePaused && !isDialogueActive)) // If no dialogue data or the game is paused and no dialogue is active, return
+        if (dialogueData == null || (PauseController.IsGamePaused && !isDialogueActive && talkedTo)) // If no dialogue data or the game is paused and no dialogue is active, return
             return;
 
-        if (isDialogueActive)
+        if (isDialogueActive) // If dialogue is active, call next line
         {
             NextLine();
         }
-        else
+        else if(!talkedTo) // Otherwise start dialogue
         {
             StartDialogue();
         }
@@ -41,6 +42,7 @@ public class NPCDrop : MonoBehaviour, IInteractable
     {
         isDialogueActive = true;
         dialogueIndex = 0;
+        talkedTo = true;
         
         nameText.SetText(dialogueData.npcName);
         //portraitImage.sprite = dialogueData.npcPortrait;
