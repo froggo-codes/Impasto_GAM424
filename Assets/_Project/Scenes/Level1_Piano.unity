@@ -658,20 +658,24 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 504252302}
     - target: {fileID: 5501060682388653064, guid: a74935f6e8b2ea94996e3241699a8135, type: 3}
+      propertyPath: attacks.Array.data[0].swoopDuration
+      value: 2.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5501060682388653064, guid: a74935f6e8b2ea94996e3241699a8135, type: 3}
       propertyPath: attacks.Array.data[1].swoopDuration
-      value: 1.6
+      value: 2.4
       objectReference: {fileID: 0}
     - target: {fileID: 5501060682388653064, guid: a74935f6e8b2ea94996e3241699a8135, type: 3}
       propertyPath: attacks.Array.data[2].swoopDuration
-      value: 1.2
+      value: 1.8
       objectReference: {fileID: 0}
     - target: {fileID: 5501060682388653064, guid: a74935f6e8b2ea94996e3241699a8135, type: 3}
       propertyPath: attacks.Array.data[3].swoopDuration
-      value: 1.2
+      value: 1.8
       objectReference: {fileID: 0}
     - target: {fileID: 5501060682388653064, guid: a74935f6e8b2ea94996e3241699a8135, type: 3}
       propertyPath: attacks.Array.data[4].swoopDuration
-      value: 0.8
+      value: 1.6
       objectReference: {fileID: 0}
     - target: {fileID: 5501060682388653064, guid: a74935f6e8b2ea94996e3241699a8135, type: 3}
       propertyPath: onCalmed.m_PersistentCalls.m_Calls.Array.size
@@ -11227,8 +11231,8 @@ MonoBehaviour:
   target: {fileID: 1799333063}
   smoothTime: 0.15
   offset: {x: 0, y: 1}
-  boundsMin: {fileID: 651219587}
-  boundsMax: {fileID: 463393923}
+  levelBoundsMin: {fileID: 651219587}
+  levelBoundsMax: {fileID: 463393923}
   arenaMin: {fileID: 1295948722}
   arenaMax: {fileID: 1308025371}
   zoomToFitArena: 1
@@ -35221,6 +35225,21 @@ MonoBehaviour:
       - m_Target: {fileID: 606319603}
         m_TargetAssemblyTypeName: CameraFollow, Assembly-CSharp
         m_MethodName: UseArenaView
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onPlayerExited:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 606319603}
+        m_TargetAssemblyTypeName: CameraFollow, Assembly-CSharp
+        m_MethodName: UseLevelView
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

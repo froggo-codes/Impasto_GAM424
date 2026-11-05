@@ -7,6 +7,7 @@ public class PlayerTrigger : MonoBehaviour
 {
     [SerializeField] private bool triggerOnce = true; // ignore every entry after the first
     [SerializeField] private UnityEvent onPlayerEntered;
+    [SerializeField] private UnityEvent onPlayerExited;
 
     private bool hasTriggered;
 
@@ -18,5 +19,12 @@ public class PlayerTrigger : MonoBehaviour
 
         hasTriggered = true;
         onPlayerEntered.Invoke();
+    }
+
+    void OnTriggerExit2D(Collider2D other)
+    {
+        // Only react to the player
+        if (other.GetComponent<PlayerMovement>() == null) return;
+        onPlayerExited.Invoke();
     }
 }
