@@ -1,23 +1,21 @@
-using Unity.VectorGraphics;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 
-// Bird boss for the piano level. A state machine: the bird is always in exactly one state.
-// Behaviour Loop: Circling -> FlyingToStart -> Telegraphing -> Swooping -> Nested -> Returning -> Circling.
+// Bird boss for the music level. A state machine: the bird is always in exactly one state.
+// Loop: Circling → FlyingToStart → Telegraphing → Swooping → Nested (stomp → Stunned) → Returning → Circling...
 public class BirdBoss : MonoBehaviour
 {
     // Every state the bird can be in
     private enum BirdState
     {
         Circling,       // drifting in an oval at the top of the arena
-        FlyingToStart,      //heading to where the next dive begins
-        Telegraphing,       //flashing red to warn the player; target nest lights up
+        FlyingToStart,  // heading to where the next dive begins
+        Telegraphing,   // flashing red to warn the player; target nest lights up
         Swooping,       // diving through the player's position into the nest
-        Nested,     // sitting in the nest (the stomp window)
-        Stunned,    // dazed after a stomp
-        Returning,   // flying back up to the oval
-        Calmed      // fight over: resting peacefully in the nest
+        Nested,         // sitting in the nest (the stomp window)
+        Stunned,        // dazed after a stomp
+        Returning,      // flying back up to the oval
+        Calmed          // fight over: rests in the calm nest
     }
 
     // One authored dive. Fill these in on the Inspector's Attacks list.
@@ -25,63 +23,68 @@ public class BirdBoss : MonoBehaviour
     private class SwoopAttack
     {
         public Transform startPoint;        // where the dive begins
-        public Transform nest;      // where the dive ends
-        public float swoopDuration = 1.2f;      // seconds; lower = faster, tighter dive
+        public Transform nest;              // where the dive ends
+        public float swoopDuration = 1.2f;  // seconds; lower = faster, tighter dive
     }
 
-    [Header("Fight")] 
-    [SerializeField] private bool startFightOnAwake = false;    // tick to skip the arena trigger while testing
-    private bool fightStarted;      // false until the player enters the arena
-    
+    [Header("Fight")]
+    [SerializeField] private bool startFightOnAwake = false;  // tick to skip the arena trigger while testing
+    private bool fightStarted;                                // false until the player enters the arena
+
     [Header("References")]
     [SerializeField] private Transform player;
-    [SerializeField] private SwoopAttack[] attacks;     //the bird picks one at random each time
+    [SerializeField] private SwoopAttack[] attacks;  // the bird picks one at random each time
 
-    [Header("Circling")] 
-    [SerializeField] private float circleWidth = 6f;        // how far left/right it drifts
-    [SerializeField] private float circleHeight = 1f;       // how far up/down it drifts
-    [SerializeField] private float circleSpeed = 1f;        // loop speed (radians/sec)
-    [SerializeField] private float circleTime = 4f;     // seconds of drifting before an attack
+    [Header("Circling")]
+    [SerializeField] private float circleWidth = 6f;   // how far left/right it drifts
+    [SerializeField] private float circleHeight = 1f;  // how far up/down it drifts
+    [SerializeField] private float circleSpeed = 1f;   // loop speed (radians per second)
+    [SerializeField] private float circleTime = 4f;    // seconds of drifting before an attack
 
-    [Header("Attack")] 
-    [SerializeField] private float flySpeed = 8f;       // speed when flying to start/returning
-    [SerializeField] private float telegraphTime = 0.6f;        // length of the red warning flash
-    [SerializeField] private float nestTime = 1.5f;     // how long it sits in the nest
+    [Header("Attack")]
+    [SerializeField] private float flySpeed = 8f;            // speed when flying to start / returning
+    [SerializeField] private float telegraphTime = 0.6f;     // length of the red warning flash
+    [SerializeField] private float nestTime = 1.5f;          // how long it sits in the nest
+    [SerializeField] private float swoopTimeScale = 1.5f;    // multiplies every dive's duration; higher = slower
+    [SerializeField] private Transform swoopFloor;           // lowest height a dive can reach (just above the arena floor)
     [SerializeField] private Color telegraphColor = Color.red;
-    [SerializeField] private bool showNestHint = true;      // light up the target nest? (difficulty lever)
+    [SerializeField] private bool showNestHint = true;       // light up the target nest? (difficulty lever)
     [SerializeField] private Color nestHintColor = Color.yellow;
 
-    [Header("Combat")] 
-    [SerializeField] private float stunTime = 2f;    // how long it says dazed after a stomp
-    [SerializeField] private float stompBounce = 12f;   // upward speed given to the player on a stomp
-    [SerializeField] private float stompHeightMargin = 0.5f;    // how far above the bird's center counts as "on top"
+    [Header("Combat")]
+    [SerializeField] private float stunTime = 2f;             // how long it stays dazed after a stomp
+    [SerializeField] private float stompBounce = 12f;         // upward speed given to the player on a stomp
+    [SerializeField] private float stompHeightMargin = 0.5f;  // how far above the bird's center counts as "on top"
     [SerializeField] private Color stunColor = Color.cyan;
 
-    [Header("Phases")] 
-    [SerializeField] private float speedUpPerHit = 0.15f;    // each stomp makes timing 15% shorter
+    [Header("Phases")]
+    [SerializeField] private float speedUpPerHit = 0.15f;   // each stomp makes timings 15% shorter
     [SerializeField] private Color calmColor = Color.green;
-    [SerializeField] private UnityEvent onCalmed;       // HOOK: fires once when the bird is calmed
+    [SerializeField] private Transform calmNest;            // where the bird rests once calmed (top middle)
+    [SerializeField] private UnityEvent onCalmed;           // HOOK: fires once when the bird is calmed
 
-    private int hitsTaken; // stomps landed so far
-
-    private Health health;
-    private DamageOnTouch damageOnTouch;
+    [Header("Song")]
+    [SerializeField] private UnityEvent onSongHeard;  // HOOK: fires once when the calmed bird hears the song
+    private bool songHeard;
 
     // Components
     private Rigidbody2D rb;
     private SpriteRenderer spriteRenderer;
     private Color normalColor;
+    private Health health;
+    private DamageOnTouch damageOnTouch;
 
-    // State Tracking. Starts in Returning so it flies smoothly into the oval.
+    // State tracking. Starts in Returning so it flies smoothly onto the oval.
     private BirdState state = BirdState.Returning;
-    private float stateTimer;       //shared countdown; each state sets it on entry
-    private Vector2 circleCenter;       //center of the oval = where the bird is placed in the scene
-    private float circleAngle;      // current position around the oval
+    private float stateTimer;      // shared countdown; each state sets it on entry
+    private Vector2 circleCenter;  // center of the oval = where the bird is placed in the scene
+    private float circleAngle;     // current position around the oval
+    private int hitsTaken;         // stomps landed so far
 
     // The dive currently in progress
     private SwoopAttack currentAttack;
     private Vector2 swoopStart;
-    private Vector2 swoopControl;       // the curve's bend point (aimed so the curve hits the player)
+    private Vector2 swoopControl;  // the curve's bend point
     private Vector2 swoopEnd;
     private float swoopTimer;
 
@@ -93,35 +96,36 @@ public class BirdBoss : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        health = GetComponent<Health>();
+        damageOnTouch = GetComponent<DamageOnTouch>();
         normalColor = spriteRenderer.color;
         circleCenter = rb.position;
         fightStarted = startFightOnAwake;
-        health = GetComponent<Health>();
-        damageOnTouch = GetComponent<DamageOnTouch>();
     }
-    
-    // Runs only the current state's behaviour. Each method below is one state.
+
+    // Runs only the current state's behavior. Each method below is one state.
     void FixedUpdate()
     {
-        //Do nothing until the player enters the arena
+        // Do nothing until the player enters the arena
         if (!fightStarted) return;
+
         // Only dangerous while flying; safe to touch while resting, stunned, or calmed
         bool isResting = state == BirdState.Nested || state == BirdState.Stunned || state == BirdState.Calmed;
         damageOnTouch.enabled = !isResting;
 
         switch (state)
         {
-            case BirdState.Circling: UpdateCircling(); break;
+            case BirdState.Circling:      UpdateCircling();      break;
             case BirdState.FlyingToStart: UpdateFlyingToStart(); break;
-            case BirdState.Telegraphing: UpdateTelegraphing(); break;
-            case BirdState.Swooping: UpdateSwooping(); break;
-            case BirdState.Nested: UpdateNested(); break;
-            case BirdState.Stunned: UpdateStunned(); break;
-            case BirdState.Returning: UpdateReturning(); break;
-            case BirdState.Calmed: break;   // does nothing; the fight is over
+            case BirdState.Telegraphing:  UpdateTelegraphing();  break;
+            case BirdState.Swooping:      UpdateSwooping();      break;
+            case BirdState.Nested:        UpdateNested();        break;
+            case BirdState.Stunned:       UpdateStunned();       break;
+            case BirdState.Returning:     UpdateReturning();     break;
+            case BirdState.Calmed:        UpdateCalmed();        break;
         }
     }
-    
+
     // CIRCLING: drift around the oval, then pick a random attack
     void UpdateCircling()
     {
@@ -135,7 +139,7 @@ public class BirdBoss : MonoBehaviour
             state = BirdState.FlyingToStart;
         }
     }
-    
+
     // Point on the oval at the current angle. Cos gives x, Sin gives y.
     Vector2 GetCirclePoint()
     {
@@ -143,7 +147,7 @@ public class BirdBoss : MonoBehaviour
         float y = Mathf.Sin(circleAngle) * circleHeight;
         return circleCenter + new Vector2(x, y);
     }
-    
+
     // FLYING TO START: once there, begin the warning flash and light up the nest
     void UpdateFlyingToStart()
     {
@@ -155,7 +159,7 @@ public class BirdBoss : MonoBehaviour
             state = BirdState.Telegraphing;
         }
     }
-    
+
     // TELEGRAPHING: wait out the flash, then lock onto the player and plan the dive
     void UpdateTelegraphing()
     {
@@ -163,26 +167,34 @@ public class BirdBoss : MonoBehaviour
         if (stateTimer > 0f) return;
 
         spriteRenderer.color = normalColor;
-        
+
         // Lock the target NOW. Moving after the flash ends dodges the dive.
         swoopStart = rb.position;
         swoopEnd = currentAttack.nest.position;
         Vector2 target = player.position;
-        
-        // A Bezier curve only travels about halfway toward its control point.
-        // So aim the control point PAST the player (roughly twice as far),
-        // and the halfway mark of the dive lands exactly on them.
+
+        // A Bézier curve only travels about halfway toward its control point,
+        // so aim the control point PAST the player and the halfway mark lands on them.
         swoopControl = 2f * target - 0.5f * (swoopStart + swoopEnd);
+
+        // If this dive would dip below the arena floor, raise its bend point
+        // just enough that the bottom of the U touches the floor
+        if (swoopFloor != null)
+        {
+            float floorY = swoopFloor.position.y;
+            float floorControlY = floorY - Mathf.Sqrt(Mathf.Max(0f, (swoopStart.y - floorY) * (swoopEnd.y - floorY)));
+            swoopControl.y = Mathf.Max(swoopControl.y, floorControlY);
+        }
 
         swoopTimer = 0f;
         state = BirdState.Swooping;
     }
-    
-    // SWOOPING: follow the curve from start to nest over swoopDuration seconds
+
+    // SWOOPING: follow the curve from start to nest
     void UpdateSwooping()
     {
         swoopTimer += Time.fixedDeltaTime;
-        float t = Mathf.Clamp01(swoopTimer / (currentAttack.swoopDuration * GetPace()));  // 0 = start, 1 = nest
+        float t = Mathf.Clamp01(swoopTimer / (currentAttack.swoopDuration * swoopTimeScale * GetPace()));  // 0 = start, 1 = nest
         rb.MovePosition(Bezier(swoopStart, swoopControl, swoopEnd, t));
 
         if (t >= 1f)
@@ -191,7 +203,7 @@ public class BirdBoss : MonoBehaviour
             state = BirdState.Nested;
         }
     }
-    
+
     // NESTED: sit still, then leave and turn the nest hint off
     void UpdateNested()
     {
@@ -201,7 +213,7 @@ public class BirdBoss : MonoBehaviour
         ShowNestHint(false);
         state = BirdState.Returning;
     }
-    
+
     // STUNNED: dazed in the nest after a stomp, then recovers and flies off
     void UpdateStunned()
     {
@@ -212,7 +224,7 @@ public class BirdBoss : MonoBehaviour
         ShowNestHint(false);
         state = BirdState.Returning;
     }
-    
+
     // RETURNING: fly back to the oval, then start drifting again
     void UpdateReturning()
     {
@@ -222,23 +234,66 @@ public class BirdBoss : MonoBehaviour
             state = BirdState.Circling;
         }
     }
-    
-    //Quadratic Bezier curve: the bird's position is a MIX of three points.
-    // t = 0: all start (a).    t = 0.5: 25% a, 50% control, 25% b.     t = 1: all nest (b).
-    // The mix sliding from start -> control -> nest is what bends the path into a U.
+
+    // CALMED: fly up to the calm nest and rest there for good
+    void UpdateCalmed()
+    {
+        if (calmNest != null)
+            FlyTowards(calmNest.position);
+    }
+
+    // Quadratic Bézier: the position is a MIX of three points.
+    // t = 0: all start (a).   t = 0.5: 25% a, 50% control, 25% b.   t = 1: all nest (b).
     Vector2 Bezier(Vector2 a, Vector2 control, Vector2 b, float t)
     {
-        float u = 1f - t;
-        return u * u * a + 2f * u * t * control + t * t * b;
+        float u = 1f - t;  // how much of the dive is left
+        return u * u * a              // share of the start point
+             + 2f * u * t * control   // share of the control point (biggest in the middle)
+             + t * t * b;             // share of the nest
     }
-    
+
+    // Timing multiplier: 1.0 at full health, shorter after each stomp (1.0 → 0.85 → 0.7)
+    float GetPace()
+    {
+        return 1f - hitsTaken * speedUpPerHit;
+    }
+
+    // STOMP CHECK: landing on the bird while it rests in the nest stuns it
+    void OnCollisionStay2D(Collision2D collision)
+    {
+        if (state != BirdState.Nested) return;
+
+        PlayerMovement playerMovement = collision.gameObject.GetComponent<PlayerMovement>();
+        if (playerMovement == null) return;
+
+        // Must be on top of the bird, not touching it from the side
+        bool playerIsAbove = collision.transform.position.y > transform.position.y + stompHeightMargin;
+        if (!playerIsAbove) return;
+
+        playerMovement.Bounce(stompBounce);
+
+        // Only continue if the hit actually landed (Health returns true/false)
+        bool hitLanded = health.TakeDamage(1);
+        if (!hitLanded) return;
+
+        hitsTaken++;
+
+        // The final stomp calms the bird (Health's On Died → Calm), so don't stun over it
+        if (state == BirdState.Calmed) return;
+
+        spriteRenderer.color = stunColor;
+        stateTimer = stunTime;
+        state = BirdState.Stunned;
+    }
+
     // Called by the arena trigger when the player walks in
     public void StartFight()
     {
         fightStarted = true;
     }
-    
+
     // Called by Health's On Died after the final stomp. Ends the fight peacefully.
+    [ContextMenu("Test: Calm")]
     public void Calm()
     {
         if (state == BirdState.Calmed) return;  // only once
@@ -246,17 +301,29 @@ public class BirdBoss : MonoBehaviour
         state = BirdState.Calmed;
         spriteRenderer.color = calmColor;
         ShowNestHint(false);
-        onCalmed.Invoke();  // HOOK: The level reacts (sheet music, exit, song modde...)
+        onCalmed.Invoke();  // HOOK: the level reacts
     }
-    
+
+    // Called by Annie's Song Spot when song 1 is played at the nest.
+    // Only works once the bird is calmed, and only once.
+    [ContextMenu("Test: Hear Song")]
+    public void HearSong()
+    {
+        if (state != BirdState.Calmed) return;  // playing the song mid-fight does nothing
+        if (songHeard) return;                  // only give the reward once
+
+        songHeard = true;
+        onSongHeard.Invoke();  // HOOK: reveal the song 2, page 4 pickup
+    }
+
     // Moves one step toward target. Returns true once it has arrived.
     bool FlyTowards(Vector2 target)
     {
         Vector2 next = Vector2.MoveTowards(rb.position, target, flySpeed * Time.fixedDeltaTime);
         rb.MovePosition(next);
-        return Vector2.Distance(next, target) < 0.5f;
+        return Vector2.Distance(next, target) < 0.05f;
     }
-    
+
     // Tints the target nest (true) or restores its color (false). Save, change, restore.
     void ShowNestHint(bool show)
     {
@@ -265,7 +332,7 @@ public class BirdBoss : MonoBehaviour
         if (show)
         {
             nestRenderer = currentAttack.nest.GetComponent<SpriteRenderer>();
-            if (nestRenderer == null) return;   // nest has no sprite, so skip the hint
+            if (nestRenderer == null) return;  // nest has no sprite, so skip the hint
             nestNormalColor = nestRenderer.color;
             nestRenderer.color = nestHintColor;
         }
@@ -273,40 +340,5 @@ public class BirdBoss : MonoBehaviour
         {
             nestRenderer.color = nestNormalColor;
         }
-    }
-    
-    // STOMP CHECK: landing on the bird while it rests in the nest stuns it
-    void OnCollisionStay2D(Collision2D collision)
-    {
-        if (state != BirdState.Nested) return;
-
-        PlayerMovement playerMovement = collision.gameObject.GetComponent<PlayerMovement>();
-        if (playerMovement == null) return;
-        
-        // Must be on top of the bird, not touching it from the side
-        bool playerIsAbove = collision.transform.position.y > transform.position.y + stompHeightMargin;
-        if (!playerIsAbove) return;
-
-        playerMovement.Bounce(stompBounce);
-        
-        // Only continue if the hit actually landed (Health returns true/false)
-        bool hitLanded = health.TakeDamage(1);
-        if (!hitLanded) return;
-
-        hitsTaken++;
-        
-        //The final stomp calms the bird (Health's On Died -> Calm), so don't stun over it
-        if (state == BirdState.Calmed) return;
-
-        spriteRenderer.color = stunColor;
-        stateTimer = stunTime;
-        state = BirdState.Stunned;
-
-    }
-    
-    // Timing multiplier: 1.0 at full health, shorter after each stomp (1.0 -> 0.85 -> 0.7)
-    float GetPace()
-    {
-        return 1f - hitsTaken * speedUpPerHit;
     }
 }
