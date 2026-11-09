@@ -49,7 +49,7 @@ public class CameraFollow : MonoBehaviour
             target.position.y + offset.y,
             transform.position.z);
 
-        // Keep the view inside the active bounds: stop following before the camera shows past the edges
+        // Keep the view inside the active bounds
         if (boundsMin != null && boundsMax != null)
         {
             float halfHeight = cam.orthographicSize;    // Size = half the visible height
@@ -65,7 +65,7 @@ public class CameraFollow : MonoBehaviour
     // Called when the player enters the arena: lock to the arena and zoom to fit it
     public void UseArenaView()
     {
-        if (arenaMin == null || arenaMax == null) return;  // arena markers not set up in this scene
+        if (arenaMin == null || arenaMax == null) return;
 
         boundsMin = arenaMin;
         boundsMax = arenaMax;
