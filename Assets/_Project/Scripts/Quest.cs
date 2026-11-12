@@ -33,6 +33,7 @@ public class Quest : ScriptableObject
 public class QuestObjective
 {
     public string objectiveID; //Match with item ID to collect, enemy ID to kill, etc.
+    public Sprite icon; //Icon to display in the UI for this objective
     public ObjectiveType type;
     public int requiredAmount; //How many items/enemies/locations are needed
     public int currentAmount; //How many items/enemies/locations have been completed

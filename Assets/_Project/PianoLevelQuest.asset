@@ -16,10 +16,12 @@ MonoBehaviour:
   questName: PianoLevel
   objectives:
   - objectiveID: 2
+    icon: {fileID: -3598916374439202735, guid: 62dbb60f850414eff9d3a90bba4d6117, type: 3}
     type: 0
     requiredAmount: 4
     currentAmount: 0
   - objectiveID: 3
+    icon: {fileID: 8469679550902686865, guid: 62dbb60f850414eff9d3a90bba4d6117, type: 3}
     type: 0
     requiredAmount: 4
     currentAmount: 0

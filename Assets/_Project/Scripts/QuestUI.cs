@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 //https://www.youtube.com/watch?v=sQyj7z9W7kk
 //Instantiates quest UI prefabs when a scene is loaded and receives updates from the Collision Detector script. 
@@ -9,6 +10,7 @@ public class QuestUI : MonoBehaviour
 {
     public Transform questListContent;
     public GameObject questEntryPrefab;
+    public Image objectiveIconPrefab;
     public GameObject objectiveTextPrefab;
 
     public Quest currentQuest; // Assign this in the inspector for testing
@@ -43,6 +45,9 @@ public class QuestUI : MonoBehaviour
 
             foreach(var objective in quest.objectives)
             {
+                // Image objIcon = Instantiate(objectiveIconPrefab, objectiveList);
+                // objIcon.sprite = objective.icon;
+
                 GameObject objTextGO = Instantiate(objectiveTextPrefab, objectiveList);
                 TMP_Text objText = objTextGO.GetComponent<TMP_Text>();
                 objText.text = $"{objective.currentAmount}/{objective.requiredAmount}";
@@ -62,6 +67,9 @@ public class QuestUI : MonoBehaviour
             {
                 var objectiveUI = questUI.Find("ObjectiveList").GetChild(j);
                 var objectiveProgress = questProgress.objectives[j];
+
+                // Image objIcon = objectiveUI.GetComponent<Image>();
+                // objIcon.sprite = objectiveProgress.icon;
 
                 TMP_Text objText = objectiveUI.GetComponent<TMP_Text>();
                 objText.text = $"{objectiveProgress.currentAmount}/{objectiveProgress.requiredAmount}";
