@@ -8,8 +8,10 @@ public class Health : MonoBehaviour
 
     [SerializeField] private UnityEvent onDamaged;
     [SerializeField] private UnityEvent onDied;
+    [SerializeField] private UnityEvent onHealthChanged;
 
     private int currentHealth;
+    public int CurrentHealth => currentHealth;
     private float invincibilityTimer;
 
     void Awake()
@@ -29,6 +31,7 @@ public class Health : MonoBehaviour
         if (invincibilityTimer > 0f) return false;
 
         currentHealth -= amount;
+        onHealthChanged.Invoke();
         invincibilityTimer = invincibilityTime;
         Debug.Log(gameObject.name + " health: " + currentHealth);
 
