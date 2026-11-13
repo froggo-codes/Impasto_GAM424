@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 478147960372585171}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -161,9 +161,6 @@ MonoBehaviour:
   dashSound: {fileID: 0}
   climbSpeed: 4
   regrabDelay: 0.25
-  knockbackVelocity: {x: 6, y: 8}
-  knockbackLockTime: 0.3
-  pianoUI: {fileID: 0}
 --- !u!70 &7926376601965210776
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
