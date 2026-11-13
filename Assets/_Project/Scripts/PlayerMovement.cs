@@ -4,12 +4,14 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [Header("Movement")] [SerializeField] private float moveSpeed = 6f;
+    [Header("Movement")] 
+    [SerializeField] private float moveSpeed = 6f;
+    
     [Header("Jump")] [SerializeField] private float jumpHeight = 3f;
     [SerializeField] private AudioClip jumpSound;
 
-    [Header("Ground Check")] [SerializeField]
-    private Transform groundCheck;
+    [Header("Ground Check")] 
+    [SerializeField] private Transform groundCheck;
     [SerializeField] private float groundCheckRadius = 0.2f;
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private float safeGroundMargin = 0.6f;
@@ -58,6 +60,8 @@ private Rigidbody2D rb;
     private Rope currentRope;
     private float regrabTimer;
     private Vector2 lastSafePosition;
+
+    private MovingPlatform currentPlatform; // the moving platform player is currently on
 
     void Awake()
     {
@@ -173,10 +177,12 @@ private Rigidbody2D rb;
             return;
         }
 
+        float platformSpeedX = currentPlatform != null ? currentPlatform.Velocity.x : 0f;
+        
         if (inputLockTimer > 0f)
             inputLockTimer -= Time.fixedDeltaTime;
         else
-            rb.linearVelocity = new Vector2(moveInput * moveSpeed, rb.linearVelocity.y);
+            rb.linearVelocity = new Vector2(moveInput * moveSpeed + platformSpeedX, rb.linearVelocity.y);
 
         if (jumpPressed)
         {
@@ -277,6 +283,18 @@ private Rigidbody2D rb;
     {
         rb.linearVelocity = new Vector2(rb.linearVelocity.x, bounceVelocity);
         canAirDash = true;
+    }
+
+    public void SetPlatform(MovingPlatform platform)
+    {
+        currentPlatform = platform;
+    }
+
+    public void ClearPlatform(MovingPlatform platform)
+    {
+        // Only clear if it's the SAME platform we're on.
+        // (if we hop from platform A to B, A's "exit" can arrive after B's "enter")
+        if (currentPlatform == platform) currentPlatform = null;
     }
 
     void OnDrawGizmosSelected()
