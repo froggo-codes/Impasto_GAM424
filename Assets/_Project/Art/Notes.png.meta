@@ -1,0 +1,2316 @@
+fileFormatVersion: 2
+guid: b55e0e46975fa458d9e669c507d79129
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3598916374439202735
+    second: Notes_0
+  - first:
+      213: -733219096263470103
+    second: Notes_1
+  - first:
+      213: 8722924714100469040
+    second: Notes_2
+  - first:
+      213: 6257677035871968672
+    second: Notes_3
+  - first:
+      213: 8039372748551541876
+    second: Notes_4
+  - first:
+      213: -2870236734101642953
+    second: Notes_5
+  - first:
+      213: -8422380503605110267
+    second: Notes_6
+  - first:
+      213: -4033378587868176147
+    second: Notes_7
+  - first:
+      213: -5364639794917071987
+    second: Notes_8
+  - first:
+      213: 8230106714801608619
+    second: Notes_9
+  - first:
+      213: 292014467029829287
+    second: Notes_10
+  - first:
+      213: -1721156879495644149
+    second: Notes_11
+  - first:
+      213: -15512175077094711
+    second: Notes_12
+  - first:
+      213: 4685801893328365384
+    second: Notes_13
+  - first:
+      213: 7024730218406149019
+    second: Notes_14
+  - first:
+      213: 4543914928925607290
+    second: Notes_15
+  - first:
+      213: 8469679550902686865
+    second: Notes_16
+  - first:
+      213: -2294269252815150097
+    second: Notes_17
+  - first:
+      213: -2888533909992384109
+    second: Notes_18
+  - first:
+      213: 7340882508842121017
+    second: Notes_19
+  - first:
+      213: -6774750761800464396
+    second: Notes_20
+  - first:
+      213: -2646777174741815205
+    second: Notes_21
+  - first:
+      213: -4030124234460849789
+    second: Notes_22
+  - first:
+      213: -3422100583068662960
+    second: Notes_23
+  - first:
+      213: 7652149888980866657
+    second: Notes_24
+  - first:
+      213: 2739658537791815814
+    second: Notes_25
+  - first:
+      213: -6909135987632999897
+    second: Notes_26
+  - first:
+      213: 5878430520547656081
+    second: Notes_27
+  - first:
+      213: 8638738317928119422
+    second: Notes_28
+  - first:
+      213: 8000362266982431705
+    second: Notes_29
+  - first:
+      213: 2752081423000592154
+    second: Notes_30
+  - first:
+      213: -8739183130022520523
+    second: Notes_31
+  - first:
+      213: -5422535981750515615
+    second: Notes_32
+  - first:
+      213: 3259601035379469345
+    second: Notes_33
+  - first:
+      213: -6964390574043210303
+    second: Notes_34
+  - first:
+      213: -9182660662629602343
+    second: Notes_35
+  - first:
+      213: -3267806340587087398
+    second: Notes_36
+  - first:
+      213: -3815669302894525880
+    second: Notes_37
+  - first:
+      213: 9042547947449986211
+    second: Notes_38
+  - first:
+      213: 7872796716636710138
+    second: Notes_39
+  - first:
+      213: 84709069023686087
+    second: Notes_40
+  - first:
+      213: 7119644179778929296
+    second: Notes_41
+  - first:
+      213: -2771792448260391203
+    second: Notes_42
+  - first:
+      213: 6311407722396873880
+    second: Notes_43
+  - first:
+      213: -6407742647433425024
+    second: Notes_44
+  - first:
+      213: 129791848405163027
+    second: Notes_45
+  - first:
+      213: -5674301488935942266
+    second: Notes_46
+  - first:
+      213: -1629089094776295848
+    second: Notes_47
+  - first:
+      213: 8193131835159697295
+    second: Notes_48
+  - first:
+      213: -3447915483458847048
+    second: Notes_49
+  - first:
+      213: 2196257018696099334
+    second: Notes_50
+  - first:
+      213: -403510576377126572
+    second: Notes_51
+  - first:
+      213: -4133038771758199928
+    second: Notes_52
+  - first:
+      213: 1659711325809064740
+    second: Notes_53
+  - first:
+      213: 2693940553878889131
+    second: Notes_54
+  - first:
+      213: 7402956381707834985
+    second: Notes_55
+  - first:
+      213: 3237984368834609155
+    second: Notes_56
+  - first:
+      213: -236696873230316357
+    second: Notes_57
+  - first:
+      213: -8445061451675169300
+    second: Notes_58
+  - first:
+      213: 7005359953698684873
+    second: Notes_59
+  - first:
+      213: -8463091933131431347
+    second: Notes_60
+  - first:
+      213: -3421281656358484166
+    second: Notes_61
+  - first:
+      213: 1468281222436693837
+    second: Notes_62
+  - first:
+      213: 7248083534282943147
+    second: Notes_63
+  - first:
+      213: 5880568782464019440
+    second: Notes_64
+  - first:
+      213: -7990310156080381545
+    second: Notes_65
+  - first:
+      213: -3230063475484718592
+    second: Notes_66
+  - first:
+      213: 8675792790719176965
+    second: Notes_67
+  - first:
+      213: -1620284746738830826
+    second: Notes_68
+  - first:
+      213: 6332671415785364944
+    second: Notes_69
+  - first:
+      213: 4710526406993330813
+    second: Notes_70
+  - first:
+      213: -6462277672986627671
+    second: Notes_71
+  - first:
+      213: -3417211956536156554
+    second: Notes_72
+  - first:
+      213: -2377784105895620009
+    second: Notes_73
+  - first:
+      213: -2312432446071383588
+    second: Notes_74
+  - first:
+      213: -4966717409658445589
+    second: Notes_75
+  - first:
+      213: -9144415935801317767
+    second: Notes_76
+  - first:
+      213: -2086179066312645224
+    second: Notes_77
+  - first:
+      213: -5970460212027239198
+    second: Notes_78
+  - first:
+      213: 1666262197095802567
+    second: Notes_79
+  - first:
+      213: 2105655532048281179
+    second: Notes_80
+  - first:
+      213: -7922185753340313188
+    second: Notes_81
+  - first:
+      213: -645692084633456809
+    second: Notes_82
+  - first:
+      213: -4159461619421414759
+    second: Notes_83
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 1700
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationMethod: 0
+  spriteTessellationDetail: -1
+  spriteGeometrySubdivision: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Notes_0
+      rect:
+        serializedVersion: 2
+        x: 521
+        y: 417
+        width: 1233
+        height: 1700
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 150f63510a41e0ec0800000000000000
+      internalID: -3598916374439202735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_1
+      rect:
+        serializedVersion: 2
+        x: 1235
+        y: 2102
+        width: 251
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e3dea0ed1513d5f0800000000000000
+      internalID: -733219096263470103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_2
+      rect:
+        serializedVersion: 2
+        x: 1466
+        y: 2099
+        width: 17
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03d2f6abfcd0e0970800000000000000
+      internalID: 8722924714100469040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_3
+      rect:
+        serializedVersion: 2
+        x: 1483
+        y: 2107
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ad944a0c1cb7d650800000000000000
+      internalID: 6257677035871968672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_4
+      rect:
+        serializedVersion: 2
+        x: 1485
+        y: 2113
+        width: 19
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 474de5e9be6919f60800000000000000
+      internalID: 8039372748551541876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_5
+      rect:
+        serializedVersion: 2
+        x: 1503
+        y: 2109
+        width: 17
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7312892c5eeda28d0800000000000000
+      internalID: -2870236734101642953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_6
+      rect:
+        serializedVersion: 2
+        x: 1521
+        y: 2109
+        width: 17
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 50a117f3e81bd1b80800000000000000
+      internalID: -8422380503605110267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_7
+      rect:
+        serializedVersion: 2
+        x: 1537
+        y: 2108
+        width: 21
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de063794b8f8608c0800000000000000
+      internalID: -4033378587868176147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_8
+      rect:
+        serializedVersion: 2
+        x: 1570
+        y: 2108
+        width: 11
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d832b049788fc85b0800000000000000
+      internalID: -5364639794917071987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_9
+      rect:
+        serializedVersion: 2
+        x: 1583
+        y: 2111
+        width: 15
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba79e4fb376373270800000000000000
+      internalID: 8230106714801608619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_10
+      rect:
+        serializedVersion: 2
+        x: 1596
+        y: 2109
+        width: 27
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a686905c917d0400800000000000000
+      internalID: 292014467029829287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_11
+      rect:
+        serializedVersion: 2
+        x: 1624
+        y: 2115
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b0c31faefe83d18e0800000000000000
+      internalID: -1721156879495644149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_12
+      rect:
+        serializedVersion: 2
+        x: 1630
+        y: 2108
+        width: 18
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ca06da42c3e8cff0800000000000000
+      internalID: -15512175077094711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_13
+      rect:
+        serializedVersion: 2
+        x: 1641
+        y: 2110
+        width: 20
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 847a0bbdeff470140800000000000000
+      internalID: 4685801893328365384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_14
+      rect:
+        serializedVersion: 2
+        x: 1668
+        y: 2102
+        width: 22
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b9bfc0f3aeadc7160800000000000000
+      internalID: 7024730218406149019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_15
+      rect:
+        serializedVersion: 2
+        x: 1690
+        y: 2110
+        width: 19
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a75843c9d8a3f0f30800000000000000
+      internalID: 4543914928925607290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_16
+      rect:
+        serializedVersion: 2
+        x: 1950
+        y: 416
+        width: 1233
+        height: 1700
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 194d1f06da85a8570800000000000000
+      internalID: 8469679550902686865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_17
+      rect:
+        serializedVersion: 2
+        x: 2664
+        y: 2101
+        width: 251
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe32ad6254e1920e0800000000000000
+      internalID: -2294269252815150097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_18
+      rect:
+        serializedVersion: 2
+        x: 2895
+        y: 2098
+        width: 17
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 399db3586bdd9e7d0800000000000000
+      internalID: -2888533909992384109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_19
+      rect:
+        serializedVersion: 2
+        x: 2912
+        y: 2106
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 937b9658fbd00e560800000000000000
+      internalID: 7340882508842121017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_20
+      rect:
+        serializedVersion: 2
+        x: 2914
+        y: 2112
+        width: 19
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f7831983104bf1a0800000000000000
+      internalID: -6774750761800464396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_21
+      rect:
+        serializedVersion: 2
+        x: 2932
+        y: 2108
+        width: 17
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b50f6ebce22c44bd0800000000000000
+      internalID: -2646777174741815205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_22
+      rect:
+        serializedVersion: 2
+        x: 2950
+        y: 2108
+        width: 17
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 389944c7c5f1218c0800000000000000
+      internalID: -4030124234460849789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_23
+      rect:
+        serializedVersion: 2
+        x: 2966
+        y: 2107
+        width: 21
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 053098896a14280d0800000000000000
+      internalID: -3422100583068662960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_24
+      rect:
+        serializedVersion: 2
+        x: 2999
+        y: 2107
+        width: 11
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 166dfbcf7c5e13a60800000000000000
+      internalID: 7652149888980866657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_25
+      rect:
+        serializedVersion: 2
+        x: 3012
+        y: 2110
+        width: 15
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 68082febce8350620800000000000000
+      internalID: 2739658537791815814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_26
+      rect:
+        serializedVersion: 2
+        x: 3025
+        y: 2108
+        width: 27
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7227448ec61dd10a0800000000000000
+      internalID: -6909135987632999897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_27
+      rect:
+        serializedVersion: 2
+        x: 3053
+        y: 2114
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 191ce06c961649150800000000000000
+      internalID: 5878430520547656081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_28
+      rect:
+        serializedVersion: 2
+        x: 3059
+        y: 2107
+        width: 18
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e7c39abeab6f2e770800000000000000
+      internalID: 8638738317928119422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_29
+      rect:
+        serializedVersion: 2
+        x: 3070
+        y: 2109
+        width: 20
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9db3de5181ff60f60800000000000000
+      internalID: 8000362266982431705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_30
+      rect:
+        serializedVersion: 2
+        x: 3097
+        y: 2101
+        width: 22
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a1fd6ea197b513620800000000000000
+      internalID: 2752081423000592154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_31
+      rect:
+        serializedVersion: 2
+        x: 3119
+        y: 2109
+        width: 19
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 539dbe3de3f28b680800000000000000
+      internalID: -8739183130022520523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_32
+      rect:
+        serializedVersion: 2
+        x: 1289
+        y: 2096
+        width: 13
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1688cf121484fb4b0800000000000000
+      internalID: -5422535981750515615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_33
+      rect:
+        serializedVersion: 2
+        x: 1314
+        y: 2101
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 12ce94f1fdd6c3d20800000000000000
+      internalID: 3259601035379469345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_34
+      rect:
+        serializedVersion: 2
+        x: 1391
+        y: 2096
+        width: 9
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1cd531dfba3895f90800000000000000
+      internalID: -6964390574043210303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_35
+      rect:
+        serializedVersion: 2
+        x: 1416
+        y: 2101
+        width: 11
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9db620777c2a09080800000000000000
+      internalID: -9182660662629602343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_36
+      rect:
+        serializedVersion: 2
+        x: 1496
+        y: 2102
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad99982627b66a2d0800000000000000
+      internalID: -3267806340587087398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_37
+      rect:
+        serializedVersion: 2
+        x: 1569
+        y: 2102
+        width: 13
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8420c9c3cf40c0bc0800000000000000
+      internalID: -3815669302894525880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_38
+      rect:
+        serializedVersion: 2
+        x: 1623
+        y: 2102
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3aca130e2759d7d70800000000000000
+      internalID: 9042547947449986211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_39
+      rect:
+        serializedVersion: 2
+        x: 1703
+        y: 2096
+        width: 7
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af42ef3e6eac14d60800000000000000
+      internalID: 7872796716636710138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_40
+      rect:
+        serializedVersion: 2
+        x: 1726
+        y: 2101
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7cd29601372fc2100800000000000000
+      internalID: 84709069023686087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_41
+      rect:
+        serializedVersion: 2
+        x: 2718
+        y: 2095
+        width: 13
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 09286e6f8ae0ec260800000000000000
+      internalID: 7119644179778929296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_42
+      rect:
+        serializedVersion: 2
+        x: 2743
+        y: 2100
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dde3452347d9889d0800000000000000
+      internalID: -2771792448260391203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_43
+      rect:
+        serializedVersion: 2
+        x: 2820
+        y: 2095
+        width: 9
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8947f1e52ef969750800000000000000
+      internalID: 6311407722396873880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_44
+      rect:
+        serializedVersion: 2
+        x: 2845
+        y: 2100
+        width: 11
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 08f0c9703002317a0800000000000000
+      internalID: -6407742647433425024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_45
+      rect:
+        serializedVersion: 2
+        x: 2925
+        y: 2101
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 31c5eea9ffc1dc100800000000000000
+      internalID: 129791848405163027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_46
+      rect:
+        serializedVersion: 2
+        x: 2998
+        y: 2101
+        width: 13
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 687c08b0cd4d041b0800000000000000
+      internalID: -5674301488935942266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_47
+      rect:
+        serializedVersion: 2
+        x: 3052
+        y: 2101
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 85e656e79105469e0800000000000000
+      internalID: -1629089094776295848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_48
+      rect:
+        serializedVersion: 2
+        x: 3132
+        y: 2095
+        width: 7
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f8753a8bef9d3b170800000000000000
+      internalID: 8193131835159697295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_49
+      rect:
+        serializedVersion: 2
+        x: 3155
+        y: 2100
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8bebdd8b22b8620d0800000000000000
+      internalID: -3447915483458847048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_50
+      rect:
+        serializedVersion: 2
+        x: 1240
+        y: 495
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 606e6da4f1caa7e10800000000000000
+      internalID: 2196257018696099334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_51
+      rect:
+        serializedVersion: 2
+        x: 1245
+        y: 499
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 451ade7c441766af0800000000000000
+      internalID: -403510576377126572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_52
+      rect:
+        serializedVersion: 2
+        x: 1274
+        y: 492
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 88b8f66822f74a6c0800000000000000
+      internalID: -4133038771758199928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_53
+      rect:
+        serializedVersion: 2
+        x: 1305
+        y: 489
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 42bba8448aa780710800000000000000
+      internalID: 1659711325809064740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_54
+      rect:
+        serializedVersion: 2
+        x: 1321
+        y: 499
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba268ff19acc26520800000000000000
+      internalID: 2693940553878889131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_55
+      rect:
+        serializedVersion: 2
+        x: 1342
+        y: 500
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 966186b4b959cb660800000000000000
+      internalID: 7402956381707834985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_56
+      rect:
+        serializedVersion: 2
+        x: 1342
+        y: 494
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 30087acb0a1afec20800000000000000
+      internalID: 3237984368834609155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_57
+      rect:
+        serializedVersion: 2
+        x: 2669
+        y: 494
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bbc49a7a27517bcf0800000000000000
+      internalID: -236696873230316357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_58
+      rect:
+        serializedVersion: 2
+        x: 2674
+        y: 498
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ced8e828a5d1dca80800000000000000
+      internalID: -8445061451675169300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_59
+      rect:
+        serializedVersion: 2
+        x: 2703
+        y: 491
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9cff4fb03c9083160800000000000000
+      internalID: 7005359953698684873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_60
+      rect:
+        serializedVersion: 2
+        x: 2750
+        y: 498
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d422a38e9be0d8a80800000000000000
+      internalID: -8463091933131431347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_61
+      rect:
+        serializedVersion: 2
+        x: 2771
+        y: 499
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a374134d57a2580d0800000000000000
+      internalID: -3421281656358484166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_62
+      rect:
+        serializedVersion: 2
+        x: 2771
+        y: 493
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d4727b51ef1606410800000000000000
+      internalID: 1468281222436693837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_63
+      rect:
+        serializedVersion: 2
+        x: 932
+        y: 488
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: baaea4b829d569460800000000000000
+      internalID: 7248083534282943147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_64
+      rect:
+        serializedVersion: 2
+        x: 947
+        y: 489
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0fbe40ca62afb9150800000000000000
+      internalID: 5880568782464019440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_65
+      rect:
+        serializedVersion: 2
+        x: 959
+        y: 486
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 79102ad5f37bc1190800000000000000
+      internalID: -7990310156080381545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_66
+      rect:
+        serializedVersion: 2
+        x: 965
+        y: 485
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 00a05c5f1628c23d0800000000000000
+      internalID: -3230063475484718592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_67
+      rect:
+        serializedVersion: 2
+        x: 1321
+        y: 489
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 50126bba39b966870800000000000000
+      internalID: 8675792790719176965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_68
+      rect:
+        serializedVersion: 2
+        x: 1349
+        y: 488
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 612f5a38b979389e0800000000000000
+      internalID: -1620284746738830826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_69
+      rect:
+        serializedVersion: 2
+        x: 1354
+        y: 491
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0dd1829c91b22e750800000000000000
+      internalID: 6332671415785364944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_70
+      rect:
+        serializedVersion: 2
+        x: 1355
+        y: 487
+        width: 9
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d724fe94fc62f5140800000000000000
+      internalID: 4710526406993330813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_71
+      rect:
+        serializedVersion: 2
+        x: 1379
+        y: 487
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a1b1bde1b06156a0800000000000000
+      internalID: -6462277672986627671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_72
+      rect:
+        serializedVersion: 2
+        x: 1386
+        y: 488
+        width: 9
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 67ed178a4df9390d0800000000000000
+      internalID: -3417211956536156554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_73
+      rect:
+        serializedVersion: 2
+        x: 2361
+        y: 487
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 752958724f9600fd0800000000000000
+      internalID: -2377784105895620009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_74
+      rect:
+        serializedVersion: 2
+        x: 2376
+        y: 488
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd9d3dc21f698efd0800000000000000
+      internalID: -2312432446071383588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_75
+      rect:
+        serializedVersion: 2
+        x: 2388
+        y: 485
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be06f89a4dca21bb0800000000000000
+      internalID: -4966717409658445589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_76
+      rect:
+        serializedVersion: 2
+        x: 2734
+        y: 488
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9762424d722881180800000000000000
+      internalID: -9144415935801317767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_77
+      rect:
+        serializedVersion: 2
+        x: 2750
+        y: 488
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 895249631376c03e0800000000000000
+      internalID: -2086179066312645224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_78
+      rect:
+        serializedVersion: 2
+        x: 2778
+        y: 487
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e4538ce11aa42da0800000000000000
+      internalID: -5970460212027239198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_79
+      rect:
+        serializedVersion: 2
+        x: 2783
+        y: 490
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c6ae88d3a0cf1710800000000000000
+      internalID: 1666262197095802567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_80
+      rect:
+        serializedVersion: 2
+        x: 2784
+        y: 486
+        width: 9
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b5ee217dc8ac83d10800000000000000
+      internalID: 2105655532048281179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_81
+      rect:
+        serializedVersion: 2
+        x: 2808
+        y: 486
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c918d77e70ebe0290800000000000000
+      internalID: -7922185753340313188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_82
+      rect:
+        serializedVersion: 2
+        x: 2815
+        y: 487
+        width: 9
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 75f2425587a0a07f0800000000000000
+      internalID: -645692084633456809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Notes_83
+      rect:
+        serializedVersion: 2
+        x: 2394
+        y: 484
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 99af385e1bf9646c0800000000000000
+      internalID: -4159461619421414759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Notes_0: -3598916374439202735
+      Notes_1: -733219096263470103
+      Notes_10: 292014467029829287
+      Notes_11: -1721156879495644149
+      Notes_12: -15512175077094711
+      Notes_13: 4685801893328365384
+      Notes_14: 7024730218406149019
+      Notes_15: 4543914928925607290
+      Notes_16: 8469679550902686865
+      Notes_17: -2294269252815150097
+      Notes_18: -2888533909992384109
+      Notes_19: 7340882508842121017
+      Notes_2: 8722924714100469040
+      Notes_20: -6774750761800464396
+      Notes_21: -2646777174741815205
+      Notes_22: -4030124234460849789
+      Notes_23: -3422100583068662960
+      Notes_24: 7652149888980866657
+      Notes_25: 2739658537791815814
+      Notes_26: -6909135987632999897
+      Notes_27: 5878430520547656081
+      Notes_28: 8638738317928119422
+      Notes_29: 8000362266982431705
+      Notes_3: 6257677035871968672
+      Notes_30: 2752081423000592154
+      Notes_31: -8739183130022520523
+      Notes_32: -5422535981750515615
+      Notes_33: 3259601035379469345
+      Notes_34: -6964390574043210303
+      Notes_35: -9182660662629602343
+      Notes_36: -3267806340587087398
+      Notes_37: -3815669302894525880
+      Notes_38: 9042547947449986211
+      Notes_39: 7872796716636710138
+      Notes_4: 8039372748551541876
+      Notes_40: 84709069023686087
+      Notes_41: 7119644179778929296
+      Notes_42: -2771792448260391203
+      Notes_43: 6311407722396873880
+      Notes_44: -6407742647433425024
+      Notes_45: 129791848405163027
+      Notes_46: -5674301488935942266
+      Notes_47: -1629089094776295848
+      Notes_48: 8193131835159697295
+      Notes_49: -3447915483458847048
+      Notes_5: -2870236734101642953
+      Notes_50: 2196257018696099334
+      Notes_51: -403510576377126572
+      Notes_52: -4133038771758199928
+      Notes_53: 1659711325809064740
+      Notes_54: 2693940553878889131
+      Notes_55: 7402956381707834985
+      Notes_56: 3237984368834609155
+      Notes_57: -236696873230316357
+      Notes_58: -8445061451675169300
+      Notes_59: 7005359953698684873
+      Notes_6: -8422380503605110267
+      Notes_60: -8463091933131431347
+      Notes_61: -3421281656358484166
+      Notes_62: 1468281222436693837
+      Notes_63: 7248083534282943147
+      Notes_64: 5880568782464019440
+      Notes_65: -7990310156080381545
+      Notes_66: -3230063475484718592
+      Notes_67: 8675792790719176965
+      Notes_68: -1620284746738830826
+      Notes_69: 6332671415785364944
+      Notes_7: -4033378587868176147
+      Notes_70: 4710526406993330813
+      Notes_71: -6462277672986627671
+      Notes_72: -3417211956536156554
+      Notes_73: -2377784105895620009
+      Notes_74: -2312432446071383588
+      Notes_75: -4966717409658445589
+      Notes_76: -9144415935801317767
+      Notes_77: -2086179066312645224
+      Notes_78: -5970460212027239198
+      Notes_79: 1666262197095802567
+      Notes_8: -5364639794917071987
+      Notes_80: 2105655532048281179
+      Notes_81: -7922185753340313188
+      Notes_82: -645692084633456809
+      Notes_83: -4159461619421414759
+      Notes_9: 8230106714801608619
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

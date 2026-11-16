@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 393e5f587def348289200ab40f2e8f3f, type: 3}
   m_Name: MadamVermillionDialogue
   m_EditorClassIdentifier: Assembly-CSharp::NPCDialogue
-  npcName: 'Madame Vermilion, Keeper of the Red Wall '
+  npcName: Mme Vermillion, Keeper of the Red Wall
   dialogueLines:
   - 'Darling. Mind the wall. '
   - "Ernst\u2019s father taught deaf children. Max painted a piano no one can hear. "
