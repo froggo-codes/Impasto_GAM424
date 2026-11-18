@@ -6,6 +6,7 @@ using Unity.VisualScripting;
 
 public class PianoPuzzle : MonoBehaviour
 {
+    public Door door;
     [SerializeField]
     private Button[] buttons;
     private int currentNoteIndex = 0;
@@ -27,7 +28,7 @@ public class PianoPuzzle : MonoBehaviour
             if (currentNoteIndex >= buttons.Length)
             {
                 UnityEngine.Debug.Log("Puzzle solved");
-                //  Door.Open();
+                door.Open();
                 currentNoteIndex = 0;
 
             }   
