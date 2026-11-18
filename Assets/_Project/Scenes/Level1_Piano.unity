@@ -3967,9 +3967,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 275449367}
     m_Modifications:
+    - target: {fileID: 2631589719859681302, guid: 685c8b6e41c9042d7b8eaecf5e649286, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 4904ef25bd3a54627a2b2edcb059f776, type: 3}
     - target: {fileID: 2889806202694004059, guid: 685c8b6e41c9042d7b8eaecf5e649286, type: 3}
       propertyPath: m_Name
       value: Tautline
+      objectReference: {fileID: 0}
+    - target: {fileID: 3768121376286725799, guid: 685c8b6e41c9042d7b8eaecf5e649286, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 3768121376286725799, guid: 685c8b6e41c9042d7b8eaecf5e649286, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 5970854753692941912, guid: 685c8b6e41c9042d7b8eaecf5e649286, type: 3}
       propertyPath: dialogueData
@@ -3993,7 +4005,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7308921225510237546, guid: 685c8b6e41c9042d7b8eaecf5e649286, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -13.05
+      value: -13.23
       objectReference: {fileID: 0}
     - target: {fileID: 7308921225510237546, guid: 685c8b6e41c9042d7b8eaecf5e649286, type: 3}
       propertyPath: m_LocalPosition.z
