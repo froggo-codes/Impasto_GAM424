@@ -38,7 +38,8 @@ public class PlayerMovement : MonoBehaviour
     [Header("Piano")]
     [SerializeField] private GameObject pianoUI;
 
-private Rigidbody2D rb;
+
+    private Rigidbody2D rb;
     private float moveInput;
     private bool jumpPressed;
     private bool isGrounded;
@@ -62,6 +63,9 @@ private Rigidbody2D rb;
     private Vector2 lastSafePosition;
 
     private MovingPlatform currentPlatform; // the moving platform player is currently on
+
+    bool isFacingRight = true; // used to flip the character sprite based on movement direction
+    public Animator animator; // reference to the Animator component
 
     void Awake()
     {
@@ -104,6 +108,15 @@ private Rigidbody2D rb;
         {
             PlayPiano();
         }
+
+        if (!touchingWallLeft && !touchingWallRight)
+        {
+            Flip();
+        }
+
+        animator.SetFloat("yVelocity", rb.linearVelocity.y);
+        animator.SetFloat("magnitude", rb.linearVelocity.magnitude);
+        animator.SetBool("isWallSliding", (touchingWallLeft || touchingWallRight) && !isGrounded && rb.linearVelocity.y < 0f);
     }
 
     void FixedUpdate()
@@ -192,6 +205,7 @@ private Rigidbody2D rb;
             {
                 rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpVelocity);
                 audioSource.PlayOneShot(jumpSound);
+                animator.SetTrigger("jump");
             }
             else if (touchingWallLeft || touchingWallRight)
             {
@@ -199,6 +213,7 @@ private Rigidbody2D rb;
                 rb.linearVelocity = new Vector2(pushDirection * wallJumpPushSpeed, jumpVelocity);
                 inputLockTimer = wallJumpLockTime;
                 audioSource.PlayOneShot(jumpSound);
+                animator.SetTrigger("jump");
             }
         }
 
@@ -320,6 +335,17 @@ private Rigidbody2D rb;
         else
         {
             pianoUI.SetActive(false);
+        }
+    }
+
+    public void Flip()
+    {
+        if(isFacingRight && moveInput < 0 || !isFacingRight && moveInput > 0)
+        {
+            isFacingRight = !isFacingRight;
+            Vector3 localScale = transform.localScale;
+            localScale.x *= -1f;
+            transform.localScale = localScale;
         }
     }
 }
