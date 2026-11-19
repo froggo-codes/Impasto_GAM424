@@ -3,10 +3,14 @@ using UnityEngine.SceneManagement;
 
 public class StartMenuController : MonoBehaviour
 {
+    public Animator transition;
     public void OnStartClick()
     {
-        //changes scene to museum hub
+        //changes scene to museum hub and fades screen to black
+        transition.SetTrigger("Start");
+
         SceneManager.LoadScene("Museum_Hub");
+        
     }
 
     public void OnExitClick()

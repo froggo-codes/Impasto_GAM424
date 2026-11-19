@@ -6,6 +6,7 @@ public class SceneChanger : MonoBehaviour, IInteractable
 {
     public string sceneToLoad;
     private bool isPortalUsable;
+    Animator transition;
 
 
     //This can be changed for future levels, possibly added on to a player to make it so they can't go back to completed levels but right now its always on. 

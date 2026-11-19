@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: c3c56edd299999645911595a3f418936
+guid: 87ce11c54841a5b478d0d1e4c6351726
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4369572136041557648
-    second: title_0
+      213: 536842826784287578
+    second: Impasto_Poster_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -102,7 +102,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: title_0
+      name: Impasto_Poster_0
       rect:
         serializedVersion: 2
         x: 0
@@ -117,8 +117,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 09ea33de4b6d3ac30800000000000000
-      internalID: 4369572136041557648
+      spriteID: a5ba1b6e4bf337700800000000000000
+      internalID: 536842826784287578
       vertices: []
       indices: 
       edges: []
@@ -137,7 +137,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      title_0: 4369572136041557648
+      Impasto_Poster_0: 536842826784287578
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
