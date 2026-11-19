@@ -879,6 +879,10 @@ PrefabInstance:
       value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 5501060682388653064, guid: a74935f6e8b2ea94996e3241699a8135, type: 3}
+      propertyPath: songPieceDrop
+      value: 
+      objectReference: {fileID: 7347150217963416152}
+    - target: {fileID: 5501060682388653064, guid: a74935f6e8b2ea94996e3241699a8135, type: 3}
       propertyPath: speedUpPerHit
       value: 0.13
       objectReference: {fileID: 0}
@@ -3533,11 +3537,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3775002168483811124, guid: bbffa9d3a970c42da87c4f3e8a2a7b66, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7.6
+      value: 16.19
       objectReference: {fileID: 0}
     - target: {fileID: 3775002168483811124, guid: bbffa9d3a970c42da87c4f3e8a2a7b66, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 12.2
+      value: 6.1
       objectReference: {fileID: 0}
     - target: {fileID: 3775002168483811124, guid: bbffa9d3a970c42da87c4f3e8a2a7b66, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4929,6 +4933,7 @@ GameObject:
   - component: {fileID: 253333146}
   - component: {fileID: 253333148}
   - component: {fileID: 253333147}
+  - component: {fileID: 253333149}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -4996,6 +5001,38 @@ MonoBehaviour:
   questUI: {fileID: 1699455197}
   objective: 0
   pianoUI: {fileID: 1390506880}
+--- !u!114 &253333149
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 253333144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30bb22ab985408a4fa3c79e2d6c503bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PianoPuzzle
+  onSolved:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 150370418}
+        m_TargetAssemblyTypeName: BirdBoss, Assembly-CSharp
+        m_MethodName: HearSong
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  buttons:
+  - {fileID: 1502090293}
+  - {fileID: 1634002483}
+  - {fileID: 1203659834}
+  - {fileID: 500660784}
 --- !u!1 &254964239
 GameObject:
   m_ObjectHideFlags: 0
@@ -12785,7 +12822,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30bb22ab985408a4fa3c79e2d6c503bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PianoPuzzle
-  door: {fileID: 652685491}
+  onSolved:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 652685491}
+        m_TargetAssemblyTypeName: Door, Assembly-CSharp
+        m_MethodName: Open
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   buttons:
   - {fileID: 1634002483}
   - {fileID: 1203659834}
