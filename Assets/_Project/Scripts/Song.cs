@@ -5,6 +5,7 @@ public class Song : MonoBehaviour
     [SerializeField] private GameObject song;
     [SerializeField] private QuestUI questUI;
     [SerializeField] private int objective;
+    [SerializeField] private GameObject pianoUI;
 
 
     void Start()
@@ -14,12 +15,20 @@ public class Song : MonoBehaviour
 
     void Update()
     {
-        ShowSong();
+        Debug.Log("Song Update: " + gameObject.name);
+        if (pianoUI.activeInHierarchy)
+        {
+            ShowSong();
+        }
+       
     }
 
     public void ShowSong()
     {   
-        if (questUI.currentQuests[0].objectives[objective].currentAmount >= questUI.currentQuests[0].objectives[objective].requiredAmount)
+        var obj = questUI.currentQuests[0].objectives[objective];
+        Debug.Log("Song check: " + obj.currentAmount + " / " + obj.requiredAmount);
+
+        if (obj.currentAmount >= obj.requiredAmount)
         {
             song.SetActive(true);
         }
