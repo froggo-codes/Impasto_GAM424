@@ -23,5 +23,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Project/Scenes/Level1_Piano.unity
     guid: 51cee9a237926c142b16aa7980772aaf
+  - enabled: 1
+    path: Assets/_Project/Scenes/Credits.unity
+    guid: 8b01a09265de5ea4196adc239506a8e2
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}

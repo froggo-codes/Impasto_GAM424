@@ -460,7 +460,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a28dc25788471a4a9719cdfade29c41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StartMenuController
-  transition: {fileID: 0}
+  transition: {fileID: 2091006131}
 --- !u!1 &939462757
 GameObject:
   m_ObjectHideFlags: 0
