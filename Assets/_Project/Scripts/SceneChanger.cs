@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -6,7 +8,8 @@ public class SceneChanger : MonoBehaviour, IInteractable
 {
     public string sceneToLoad;
     private bool isPortalUsable;
-    Animator transition;
+    public Animator transition;
+    public float transitionTime = 1f;
 
 
     //This can be changed for future levels, possibly added on to a player to make it so they can't go back to completed levels but right now its always on. 
@@ -25,7 +28,17 @@ public class SceneChanger : MonoBehaviour, IInteractable
     {
         if (isPortalUsable == true)
         {
-            SceneManager.LoadScene(sceneToLoad);
+            LoadLevel();
+
         }
     }
+
+    private IEnumerator LoadLevel()
+    {
+        transition.SetTrigger("Start");
+        yield return new WaitForSeconds(transitionTime);
+        SceneManager.LoadScene(sceneToLoad);
+    }
 }
+
+
