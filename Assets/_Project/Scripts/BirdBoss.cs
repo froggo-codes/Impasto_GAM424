@@ -65,6 +65,11 @@ public class BirdBoss : MonoBehaviour
 
     [Header("Song")]
     [SerializeField] private UnityEvent onSongHeard;  // HOOK: fires once when the calmed bird hears the song
+
+    [Header("Animation")]
+    [SerializeField] private Animator animator;
+    [SerializeField] private GameObject bird;
+
     private bool songHeard;
 
     [Header("Song Drop")] [SerializeField]
@@ -94,6 +99,8 @@ public class BirdBoss : MonoBehaviour
     // Nest hint: remember the nest's color so we can put it back
     private SpriteRenderer nestRenderer;
     private Color nestNormalColor;
+
+    bool isFacingLeft = true; // used to flip the character sprite based on movement direction
 
     void Awake()
     {
@@ -126,6 +133,26 @@ public class BirdBoss : MonoBehaviour
             case BirdState.Stunned:       UpdateStunned();       break;
             case BirdState.Returning:     UpdateReturning();     break;
             case BirdState.Calmed:        UpdateCalmed();        break;
+        }
+
+        if (rb.linearVelocity.x < 0)
+        {
+            Flip();
+        }
+
+        animator.SetBool("telegraphing", BirdState.Telegraphing == state);
+        animator.SetBool("swooping", BirdState.Swooping == state);
+        animator.SetBool("resting", isResting == true);
+    }
+
+    private void Flip()
+    {
+        if(isFacingLeft)
+        {
+            isFacingLeft = !isFacingLeft;
+            Vector3 localScale = transform.localScale;
+            localScale.x *= -1f;
+            transform.localScale = localScale;
         }
     }
 
