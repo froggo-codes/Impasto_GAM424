@@ -67,6 +67,9 @@ public class BirdBoss : MonoBehaviour
     [SerializeField] private UnityEvent onSongHeard;  // HOOK: fires once when the calmed bird hears the song
     private bool songHeard;
 
+    [Header("Song Drop")] [SerializeField]
+    private GameObject songPieceDrop;
+
     // Components
     private Rigidbody2D rb;
     private SpriteRenderer spriteRenderer;
@@ -304,6 +307,13 @@ public class BirdBoss : MonoBehaviour
         onCalmed.Invoke();  // HOOK: the level reacts
     }
 
+    void DropSongPiece()
+    {
+        if (songPieceDrop == null) return;
+        songPieceDrop.transform.position = transform.position;
+        songPieceDrop.SetActive(true);
+    }
+
     // Called by Annie's Song Spot when song 1 is played at the nest.
     // Only works once the bird is calmed, and only once.
     [ContextMenu("Test: Hear Song")]
@@ -314,6 +324,8 @@ public class BirdBoss : MonoBehaviour
 
         songHeard = true;
         onSongHeard.Invoke();  // HOOK: reveal the song 2, page 4 pickup
+
+        DropSongPiece();
     }
 
     // Moves one step toward target. Returns true once it has arrived.

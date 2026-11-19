@@ -38,7 +38,10 @@ public class PlayerMovement : MonoBehaviour
     [Header("Piano")]
     [SerializeField] private GameObject pianoUI;
 
-private Rigidbody2D rb;
+    [Header("Animation")]
+    [SerializeField] private Animator animator;
+
+    private Rigidbody2D rb;
     private float moveInput;
     private bool jumpPressed;
     private bool isGrounded;
@@ -63,6 +66,9 @@ private Rigidbody2D rb;
 
     private MovingPlatform currentPlatform; // the moving platform player is currently on
 
+    bool isFacingRight = true; // used to flip the character sprite based on movement direction
+    
+
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -73,6 +79,10 @@ private Rigidbody2D rb;
 
     void Update()
     {
+        if (Keyboard.current.qKey.wasPressedThisFrame)
+        {
+            PlayPiano();
+        }
         if (PauseController.IsGamePaused) return;
         
         moveInput = 0f;
@@ -100,10 +110,15 @@ private Rigidbody2D rb;
         if (Keyboard.current.leftShiftKey.wasPressedThisFrame)
             dashPressed = true;
         
-        if (Keyboard.current.qKey.wasPressedThisFrame)
+
+        if (!touchingWallLeft && !touchingWallRight)
         {
-            PlayPiano();
+            Flip();
         }
+
+        animator.SetFloat("yVelocity", rb.linearVelocity.y);
+        animator.SetFloat("magnitude", rb.linearVelocity.magnitude);
+        animator.SetBool("isWallSliding", (touchingWallLeft || touchingWallRight) && !isGrounded && rb.linearVelocity.y < 0f);
     }
 
     void FixedUpdate()
@@ -192,6 +207,7 @@ private Rigidbody2D rb;
             {
                 rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpVelocity);
                 audioSource.PlayOneShot(jumpSound);
+                animator.SetTrigger("jump");
             }
             else if (touchingWallLeft || touchingWallRight)
             {
@@ -199,6 +215,7 @@ private Rigidbody2D rb;
                 rb.linearVelocity = new Vector2(pushDirection * wallJumpPushSpeed, jumpVelocity);
                 inputLockTimer = wallJumpLockTime;
                 audioSource.PlayOneShot(jumpSound);
+                animator.SetTrigger("jump");
             }
         }
 
@@ -311,15 +328,27 @@ private Rigidbody2D rb;
     }
 
     public void PlayPiano()
-    {
+    {  
         if (!pianoUI.activeInHierarchy)
         {
             pianoUI.SetActive(true);
-
+            PauseController.SetPause(true);
         }
-        else
+        else if (pianoUI.activeInHierarchy)
         {
             pianoUI.SetActive(false);
+            PauseController.SetPause(false);
+        }
+    }
+
+    public void Flip()
+    {
+        if(isFacingRight && moveInput < 0 || !isFacingRight && moveInput > 0)
+        {
+            isFacingRight = !isFacingRight;
+            Vector3 localScale = transform.localScale;
+            localScale.x *= -1f;
+            transform.localScale = localScale;
         }
     }
 }
