@@ -22264,6 +22264,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8260840241041674628, guid: 4df9bc98e14e74b538bb4a104b1c6f11, type: 3}
       insertIndex: -1
       addedObject: {fileID: 652685496}
+    - targetCorrespondingSourceObject: {fileID: 8260840241041674628, guid: 4df9bc98e14e74b538bb4a104b1c6f11, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 652685497}
   m_SourcePrefab: {fileID: 100100000, guid: 4df9bc98e14e74b538bb4a104b1c6f11, type: 3}
 --- !u!1 &652685489 stripped
 GameObject:
@@ -22480,6 +22483,19 @@ MonoBehaviour:
   - {fileID: 1203659834}
   - {fileID: 1502090293}
   - {fileID: 500660784}
+--- !u!114 &652685497
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 652685489}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa9b91350afa5c7458adec1a870a94fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SceneChanger
+  sceneToLoad: Credits
 --- !u!1001 &653446353
 PrefabInstance:
   m_ObjectHideFlags: 0
