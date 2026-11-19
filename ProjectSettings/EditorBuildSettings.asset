@@ -12,10 +12,19 @@ EditorBuildSettings:
     path: Assets/_Project/Scenes/Prototype_Level.unity
     guid: 5a3657de99c7a4ff0b4c72016ffcde26
   - enabled: 1
+    path: Assets/_Project/Scenes/MainMenu.unity
+    guid: f4b3d191563bf934b9470a65ca1a59db
+  - enabled: 1
+    path: Assets/_Project/Scenes/Tutorial.unity
+    guid: 4235457c6be670140ab7cf6de9562876
+  - enabled: 1
     path: Assets/_Project/Scenes/Museum_Hub.unity
     guid: cdc28c27ec9f13c4e8d691ecb6be516b
   - enabled: 1
     path: Assets/_Project/Scenes/Level1_Piano.unity
     guid: 51cee9a237926c142b16aa7980772aaf
+  - enabled: 1
+    path: Assets/_Project/Scenes/Credits.unity
+    guid: 8b01a09265de5ea4196adc239506a8e2
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
