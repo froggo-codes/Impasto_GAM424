@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class EndTrigger : MonoBehaviour
 {
@@ -10,7 +11,8 @@ public class EndTrigger : MonoBehaviour
     {
         if (collision.gameObject.GetComponent(_colliderScript) != null)
         {
-            _collisionEntered.Invoke();
+            // _collisionEntered.Invoke();
+            SceneManager.LoadScene("Credits");
         }
     }
 }
