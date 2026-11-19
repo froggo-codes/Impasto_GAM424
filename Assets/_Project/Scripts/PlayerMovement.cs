@@ -38,6 +38,8 @@ public class PlayerMovement : MonoBehaviour
     [Header("Piano")]
     [SerializeField] private GameObject pianoUI;
 
+    [Header("Animation")]
+    [SerializeField] private Animator animator;
 
     private Rigidbody2D rb;
     private float moveInput;
@@ -65,7 +67,7 @@ public class PlayerMovement : MonoBehaviour
     private MovingPlatform currentPlatform; // the moving platform player is currently on
 
     bool isFacingRight = true; // used to flip the character sprite based on movement direction
-    public Animator animator; // reference to the Animator component
+    
 
     void Awake()
     {
@@ -326,15 +328,16 @@ public class PlayerMovement : MonoBehaviour
     }
 
     public void PlayPiano()
-    {
-        if (!pianoUI.activeInHierarchy)
+    {  
+        if (!pianoUI.activeInHierarchy && !PauseController.IsGamePaused)
         {
             pianoUI.SetActive(true);
-
+            PauseController.SetPause(true);
         }
-        else
+        else if (pianoUI.activeInHierarchy && PauseController.IsGamePaused)
         {
             pianoUI.SetActive(false);
+            PauseController.SetPause(false);
         }
     }
 
