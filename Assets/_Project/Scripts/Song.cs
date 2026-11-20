@@ -15,7 +15,6 @@ public class Song : MonoBehaviour
 
     void Update()
     {
-        Debug.Log("Song Update: " + gameObject.name);
         if (pianoUI.activeInHierarchy)
         {
             ShowSong();
